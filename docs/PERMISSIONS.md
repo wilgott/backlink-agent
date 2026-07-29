@@ -1,0 +1,95 @@
+# Permissions — running unattended without approval prompts
+
+The whole point of backlink-agent is that a human sets policy **once** (in
+`settings.json` + `product.json`) and the agent then runs unattended. The same
+idea applies to the agent harness itself: pre-approve the tool calls the run
+will need, or you will be babysitting permission prompts.
+
+This file is the reference allowlist we run with. It goes in your **user-level**
+`~/.claude/settings.json` under `permissions.allow` (user-level, not project
+`settings.local.json`, so it applies to every project — including fresh clones
+of this repo).
+
+## Recommended `permissions.allow`
+
+```json
+[
+  "Bash(node:*)",
+  "Bash(python3:*)",
+  "Bash(python:*)",
+  "Bash(.venv/bin/python:*)",
+  "Bash(npx:*)",
+  "Bash(npm install:*)",
+  "Bash(pip3 install:*)",
+  "Bash(curl *)",
+  "Bash(mkdir:*)",
+  "Bash(cp:*)",
+  "Bash(mv:*)",
+  "Bash(rm:*)",
+  "Bash(ln:*)",
+  "Bash(touch:*)",
+  "Bash(cat:*)",
+  "Bash(head:*)",
+  "Bash(tail:*)",
+  "Bash(sed:*)",
+  "Bash(awk:*)",
+  "Bash(jq:*)",
+  "Bash(grep:*)",
+  "Bash(find:*)",
+  "Bash(ls:*)",
+  "Bash(sort:*)",
+  "Bash(uniq:*)",
+  "Bash(cut:*)",
+  "Bash(diff:*)",
+  "Bash(wc:*)",
+  "Bash(date:*)",
+  "Bash(sleep:*)",
+  "Bash(echo:*)",
+  "Bash(which:*)",
+  "Bash(chmod:*)",
+  "Bash(sips:*)",
+  "Edit(//<absolute-path-to-your-projects>/**)",
+  "Write(//<absolute-path-to-your-projects>/**)",
+  "mcp__playwright__browser_file_upload",
+  "mcp__playwright__browser_select_option",
+  "mcp__playwright__browser_handle_dialog",
+  "mcp__playwright__browser_hover",
+  "mcp__playwright__browser_navigate_forward"
+]
+```
+
+## Why each group
+
+| Group | Why the run needs it |
+|---|---|
+| `node` / `python3` / `.venv/bin/python` | Adapter scripts and the package CLI. |
+| `npx` / `npm install` / `pip install` | Playwright + browser install, Python deps. |
+| `curl` | Form recon (headers, redirects, captcha detection). |
+| `mkdir` `cp` `mv` `rm` `ln` `touch` | Work dirs, screenshot moves, state cleanup every run. |
+| `cat` `head` `tail` `sed` `awk` `jq` `grep` `find` `sort` `uniq` `cut` `diff` `wc` | Reading form HTML, parsing JSON API responses, updating the directory database. |
+| `date` `sleep` | Log timestamps; polling between email-verification checks. |
+| `sips` | Resizing logos when a site demands a specific pixel size. |
+| `Edit`/`Write` on your projects dir | Agents write adapter scripts, logs, and state files constantly. Scope to your projects root, not `/`. |
+| Playwright MCP extras | `file_upload` (logo/screenshot uploads), `select_option` (category dropdowns), `handle_dialog` (confirm dialogs). These prompt on nearly every submission without the rules. |
+
+## Lessons baked into this list
+
+1. **Compound commands defeat allow rules.** `Bash(node:*)` does NOT cover
+   `cat > script.mjs << 'EOF' ... EOF && node script.mjs` — the heredoc compound
+   prompts as a unit. Write scripts with the file-writing tool instead, then run
+   them as single commands. Single-purpose commands pass; compounds prompt.
+2. **Edit/Write are separate permission domains.** Allowing `Bash` does nothing
+   for file-edit prompts. Add explicit `Edit(...)`/`Write(...)` path rules.
+3. **MCP tools are per-tool rules.** `mcp__playwright__browser_navigate` does
+   not imply `mcp__playwright__browser_file_upload`. List the extras explicitly.
+4. **User-level > project-level for this file.** Project `settings.local.json`
+   only helps one repo; the same agents run across many.
+5. **Keep the blast radius conscious.** `node:*`, `python3:*`, `rm:*`, `curl *`
+   together are arbitrary code execution + deletion. That is the accepted trade
+   for unattended runs — mitigate by *not* adding deploy/push/destructive rules
+   (keep `git push`, `wrangler deploy`, payment flows manual or per-project).
+
+## When an agent still asks for something
+
+Treat it as a policy gap, not a one-off: add the rule here (and to your
+settings.json) instead of approving the same prompt repeatedly.

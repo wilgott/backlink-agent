@@ -92,6 +92,8 @@ decision per site so you can review before submitting.
 Field-by-field documentation: [examples/settings.schema.md](examples/settings.schema.md).
 Rules for AI agents operating this repo: [docs/AGENTS.md](docs/AGENTS.md).
 
+Running unattended without approval prompts: [docs/PERMISSIONS.md](docs/PERMISSIONS.md).
+
 ## Adapters
 
 Each supported site has a Node.js Playwright adapter implementing the
