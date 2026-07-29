@@ -1,0 +1,16 @@
+{
+  "name": "backlink-agent-adapters",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Per-site Playwright submission adapters for backlink-agent. Invoked by the Python runner via the JSON file contract in docs/ADAPTER_CONTRACT.md.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

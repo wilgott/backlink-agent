@@ -1,0 +1,45 @@
+{
+  "product": {
+    "name": "Klinky",
+    "website": "https://klinky.io",
+    "tagline": {
+      "39": "Split one link between two destinations",
+      "50": "A/B testing link shortener for controlled rollouts",
+      "66": "Split one link between two destinations and measure which one wins",
+      "111": "Split one link between two destinations. Send a controlled share of visitors to a new page, workflow, or offer."
+    },
+    "description": {
+      "145": "Split one link between two destinations. Send a controlled share of visitors to a new page, workflow, or offer without replacing the current one.",
+      "150": "Klinky is an A/B testing link shortener. Split one short link between two destinations and send a controlled share of visitors to a new page or offer.",
+      "505": "Klinky is an A/B testing link shortener. Split one short link between two destinations and send a controlled share of visitors to a new page, workflow, or offer without replacing the current one. Every click is tracked, so you can compare variants with real data instead of guessing. Built for marketers and founders who want to test landing pages, pricing pages, or campaigns from a single link. Redirects resolve at the edge in milliseconds, and click analytics update in real time. Free tier available.",
+      "1341": "Klinky is an A/B testing link shortener built for controlled rollouts. One short link routes visitors to two destinations at weights you choose — send 90% to your current page and 10% to the new version you want to try, then adjust as results come in.\n\nEvery click is tracked in real time, so you can compare variants with real data instead of guessing. Redirects resolve at the edge in milliseconds, which means no measurable latency penalty for visitors and no SEO impact on your campaigns.\n\nTypical uses: testing a new landing page against the current one, routing a small share of traffic to a new checkout or onboarding flow, comparing pricing pages, running campaign links where you want to swap destinations without changing the link you already distributed, and geographic or weighted routing for launches.\n\nKlinky is built for marketers, founders, and small teams who find full-featured A/B testing platforms too heavy: no JavaScript snippet on your site, no visual editor, no monthly experiment quota — just a link that splits traffic and reports what happened. Setup takes under a minute: create a link, set two destinations, choose the split, share the link.\n\nFree tier available while the product is early. Paid plans add custom domains, more links, and higher click volumes. Based in Norway, built on Cloudflare's edge network.",
+      "2192": "Klinky is an A/B testing link shortener built for controlled rollouts.\n\nThe core idea: one short link routes visitors to two destinations at weights you choose. Send most visitors to your current page or workflow, and a smaller share to the new version you want to try. You get real-world data on the change without betting the whole audience on it.\n\nHow it works: you create a Klinky link, set the current destination and the new destination, and pick a traffic split (for example 80/20). Every click on that link is routed at the edge in milliseconds and recorded. You watch the split results come in, adjust the weights at any time, or point 100% at the winner — the link itself never changes, so anything you have already shared keeps working.\n\nWhat it is for:\n- Trying a new landing page against the current one without replacing it\n- Sending a small share of traffic to a new checkout, signup flow, or no-code workflow\n- Comparing pricing or offer pages with real visitors\n- Campaign links where the destination may need to change after the link is already distributed (ads, newsletters, QR codes, packaging)\n- Gradual rollouts: start at 95/5, shift to 50/50, then 0/100 when the new page proves itself\n\nWhat it deliberately is not: a full A/B testing platform. There is no JavaScript snippet to install on your site, no visual editor, no experiment quota, and no six-figure enterprise contract. Klinky sits one level lower, at the link itself — which means it works with any stack, any site builder, and any analytics setup you already use. Results are visible in Klinky's real-time click analytics, and you can compare conversions in your existing analytics, CRM, or checkout logs.\n\nTechnical notes: redirects run on Cloudflare's edge network for sub-5ms response times globally. Click events are recorded with timestamp, geography, device, and referrer. Links support weighted routing, editable destinations, and per-link analytics. A REST API is available for programmatic link management.\n\nKlinky is a bootstrapped product based in Norway. It is free while it is early — no credit card required. Paid plans will add custom domains, higher link and click volumes, and team features."
+    },
+    "categories": ["A/B Testing", "Marketing", "Link Management"],
+    "tags": ["A/B testing", "link shortener", "url shortener", "split testing", "marketing tools", "analytics", "saas"],
+    "founded_year": 2026,
+    "hq": "Norway",
+    "team_size": "1",
+    "pricing_model": "Freemium",
+    "founder_name": "Robin Wilgott",
+    "founder_linkedin": "https://www.linkedin.com/in/robinwilgott",
+    "founder_github": "https://github.com/wilgott",
+    "contact_email_consumer": "klinky.signals@gmail.com",
+    "contact_email_business": "backlink@klinky.io",
+    "phone": "+4745377407"
+  },
+  "assets": {
+    "logo_512": "./assets/logo-512.png",
+    "screenshots": [
+      "./assets/screenshot-1-homepage.png",
+      "./assets/screenshot-2-feature-ab-testing.png",
+      "./assets/screenshot-3-feature-analytics.png"
+    ],
+    "notes": "Paths are relative to the working directory where you run the CLI. The referenced files must exist before running `submit` — sites that ask for a logo or screenshot upload will fail without them. Create ./assets/ and add a square 512x512 PNG logo plus at least one product screenshot."
+  },
+  "elevator_answers": {
+    "problem": "Changing a live page is risky. Klinky lets you send a small, controlled share of one link's traffic to the new version — so you get real data before committing.",
+    "audience": "Marketers, founders, and small teams who want to test landing pages, offers, or workflows without installing a full A/B testing platform.",
+    "differentiator": "It works at the link level, not the page level: no JavaScript snippet, no visual editor, works with any stack. Sub-5ms edge redirects, real-time click analytics, free while early."
+  }
+}

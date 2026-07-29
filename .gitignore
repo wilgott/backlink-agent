@@ -1,0 +1,22 @@
+# Secrets and local environment
+.env
+
+# Runtime state and logs (append-only, never commit)
+state/
+logs/
+*.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+
+# Local product profiles.
+# NOTE: examples/product.json IS committed — it is the worked example.
+# Your real profile lives at the repo root and is gitignored:
+/product.json
+examples/product.local.json
+.venv/

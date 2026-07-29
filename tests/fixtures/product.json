@@ -1,0 +1,40 @@
+{
+  "product": {
+    "name": "Example Product",
+    "website": "https://example.com",
+    "tagline": {
+      "39": "An example product for testing things",
+      "50": "An example product used to test the config",
+      "66": "An example product used to test the config loader end to end",
+      "111": "An example product used to test the config loader end to end. It exists only so the tests have a valid profile to load."
+    },
+    "description": {
+      "145": "An example product used to test the config loader end to end. It exists only so the tests have a valid profile to load and nothing more.",
+      "150": "An example product used to test the config loader end to end. It exists only so the tests have a valid profile to load and nothing more at all.",
+      "505": "An example product used to test the config loader end to end. It exists only so the tests have a valid profile to load. It does not do anything real, it is never submitted anywhere, and its only purpose is to exercise validation logic in the unit tests. If you see this text in a real directory submission, something has gone badly wrong with the fixture paths in the test suite and you should investigate before continuing.",
+      "1341": "An example product used to test the config loader end to end. It exists only so the tests have a valid profile to load.",
+      "2192": "An example product used to test the config loader end to end. It exists only so the tests have a valid profile to load."
+    },
+    "categories": ["Testing"],
+    "tags": ["testing", "example"],
+    "founded_year": 2026,
+    "hq": "Nowhere",
+    "team_size": "1",
+    "pricing_model": "Free",
+    "founder_name": "Test Person",
+    "founder_linkedin": "https://www.linkedin.com/in/testperson",
+    "founder_github": "https://github.com/testperson",
+    "contact_email_consumer": "test@example.com",
+    "contact_email_business": "business@example.com",
+    "phone": "+4700000000"
+  },
+  "assets": {
+    "logo_512": "./assets/logo-512.png",
+    "screenshots": ["./assets/screenshot-1-homepage.png"]
+  },
+  "elevator_answers": {
+    "problem": "Tests need a valid product profile to load.",
+    "audience": "Test suites.",
+    "differentiator": "It is not real."
+  }
+}

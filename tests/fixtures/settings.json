@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "product_profile_path": "product.json",
+  "state_db": "./state/backlink-agent.db",
+  "log_dir": "./logs",
+  "token_dir": "~/.config/backlink-agent",
+  "allowlist": {
+    "max_submissions_per_run": 10,
+    "min_automation_score": 4,
+    "allowed_sites": ["Launching Next", "Startup Stash", "aitoolslist.io"],
+    "blocked_sites": [],
+    "allowed_costs": "free_only",
+    "max_paid_usd": 0,
+    "allowed_actions": [
+      "form_post",
+      "account_creation",
+      "email_verification",
+      "file_upload"
+    ],
+    "allowed_personal_data": [
+      "name",
+      "email",
+      "business_email",
+      "phone"
+    ],
+    "allowed_hours_utc": null
+  },
+  "email": {
+    "enabled": true,
+    "provider": "gmail",
+    "poll_interval_seconds": 30,
+    "max_wait_minutes": 30,
+    "allowed_sender_patterns": [".*"]
+  }
+}
