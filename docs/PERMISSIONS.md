@@ -50,6 +50,29 @@ of this repo).
   "Bash(sips:*)",
   "Edit(//<absolute-path-to-your-projects>/**)",
   "Write(//<absolute-path-to-your-projects>/**)",
+  "WebFetch",
+  "Bash(git add:*)", "Bash(git commit:*)", "Bash(git push:*)",
+  "Bash(git fetch:*)", "Bash(git worktree:*)", "Bash(git checkout:*)",
+  "Bash(git branch:*)", "Bash(git status:*)", "Bash(git diff:*)",
+  "Bash(git log:*)", "Bash(git stash:*)", "Bash(git merge:*)",
+  "Bash(gh run *)", "Bash(gh api *)",
+  "Bash(base64:*)", "Bash(file:*)", "Bash(stat:*)",
+  "mcp__playwright__browser_run_code_unsafe",
+  "mcp__playwright__browser_tabs",
+  "mcp__playwright__browser_press_key",
+  "mcp__playwright__browser_type",
+  "mcp__playwright__browser_fill_form",
+  "mcp__playwright__browser_evaluate",
+  "mcp__playwright__browser_take_screenshot",
+  "mcp__playwright__browser_snapshot",
+  "mcp__playwright__browser_click",
+  "mcp__playwright__browser_navigate",
+  "mcp__playwright__browser_console_messages",
+  "mcp__playwright__browser_network_requests",
+  "mcp__playwright__browser_close",
+  "mcp__playwright__browser_navigate_back",
+  "mcp__playwright__browser_wait_for",
+  "mcp__playwright__browser_resize",
   "mcp__playwright__browser_file_upload",
   "mcp__playwright__browser_select_option",
   "mcp__playwright__browser_handle_dialog",
@@ -82,7 +105,9 @@ of this repo).
    for file-edit prompts. Add explicit `Edit(...)`/`Write(...)` path rules.
 3. **MCP tools are per-tool rules.** `mcp__playwright__browser_navigate` does
    not imply `mcp__playwright__browser_file_upload`. List the extras explicitly.
-4. **User-level > project-level for this file.** Project `settings.local.json`
+4. **WebFetch is per-domain unless you allow it bare.** New directory domains prompt every time during recon; a bare `WebFetch` rule is read-only and kills the whole class.
+5. **Git is per-subcommand.** `git commit` does not imply `git worktree` or `git stash`. Push-driven deploy flows need `git push` — note it also permits `--force`; split it out if that matters to you.
+6. **User-level > project-level for this file.** Project `settings.local.json`
    only helps one repo; the same agents run across many.
 5. **Keep the blast radius conscious.** `node:*`, `python3:*`, `rm:*`, `curl *`
    together are arbitrary code execution + deletion. That is the accepted trade
