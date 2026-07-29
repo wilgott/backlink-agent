@@ -273,3 +273,149 @@ to listing. Skipping auth saves the whole OAuth/session problem when it
 works.
 
 **Confirmed on:** EU-Startups.
+
+## 13. Rails OmniAuth Identity forms: submit stays disabled until fixed #*_input ids see fills
+
+**Symptom.** An email/password signup form is fully filled, but the submit
+button never enables.
+
+**Detection.** Rails app running OmniAuth Identity; the form carries
+`data-form-disable-submit-ids` listing fixed ids (`#email_input`,
+`#password_input`, `#first_name_input`, `#tos_consent_grant`). The visible
+inputs have hashed/generated `name` attributes but stable `id`s; JS watchers
+enable submit only when those specific ids' values change. Filling by `name`
+(or by label, which resolves to the name) leaves the button dead.
+
+**Solution.** Fill the stable `#*_input` ids with real input events
+(`locator.fill`), never by name. Custom checkboxes are not native inputs —
+force-click their `label[for="<id>"]`. Consent checkboxes can sit below the
+fold and still gate submit (Stimulus `enable-form-submit`): scroll the whole
+form and tick every consent box before concluding the flow is stuck. Email
+verification renders as N single-char inputs that auto-advance — see pattern
+15 for code entry.
+
+**Confirmed on:** G2 (my.g2.com signup; profile approved).
+
+## 14. Hidden submit gates in multi-step SPA wizards: no button means a gating field
+
+**Symptom.** The form looks complete but there is NO submit button anywhere
+in the DOM (not just a disabled one), or it never materializes.
+
+**Detection.** The submit control is absent until a specific field is set.
+Rule of thumb: **if no submit button exists, find the gating field.**
+
+**Solution.** Enumerate unset required selects and consent checkboxes before
+declaring the flow broken:
+- DevHunt renders no launch button at all until the required launch-week
+  `<select>` is chosen — picking any week materializes the button.
+- G2's Stimulus `enable-form-submit` requires below-fold consent checkboxes
+  (pattern 13).
+
+**Confirmed on:** DevHunt (week select gates the launch button), G2 (consent
+checkboxes gate submit).
+
+## 15. Email OTP codes (not links)
+
+**Symptom.** Verification is a short code emailed to the contact address,
+not a clickable link.
+
+**Solution.** Read the code from the campaign Gmail **body**
+(`gmail_body.py`, or the package's email module — the code is in the body
+text, not a URL). The entry UI is usually N single-char inputs that
+auto-advance: either type digit-by-digit across the boxes or type the full
+code into box 0 and let auto-advance distribute it. Codes are single-use and
+short-lived — request once, read once, enter immediately (all of pattern
+11's rules still apply).
+
+**Confirmed on:** F6S (6-digit code), G2 (8-char code), SoftwareSuggest
+vendor portal (pattern 11).
+
+## 16. reCAPTCHA v2 checkbox: try ONE plain click before escalating
+
+**Symptom.** A reCAPTCHA v2 "I'm not a robot" checkbox guards the form.
+
+**Solution.** In a normal Chromium profile (persistent, non-automation-flagged
+UA) the checkbox often passes with a single plain click on
+`#recaptcha-anchor` inside the checkbox iframe — no challenge at all. Always
+try the plain click first. Only if a visual image challenge appears do you
+stop with `CAPTCHA_UNSOLVABLE`; there is no reCAPTCHA equivalent of the
+hCaptcha accessibility cookie (pattern 4), so the only levers are a warmed
+profile and a later retry. Never attempt to solve the image grid.
+
+**Confirmed on:** F6S (single click passed, no visual challenge).
+
+## 17. "Skip the queue" pricing disguised as required: back out and verify before assuming payment
+
+**Symptom.** The only visible submit/launch button mentions a price, or a
+checkout page appears immediately after submission — making payment look
+mandatory.
+
+**Solution.** Verify listing existence before believing the paywall:
+- DevHunt's only launch button says "$49", but clicking it created the
+  listing FREE immediately — payment is a post-submit upsell.
+- Fazier's post-schedule "Supercharge" page is a Polar.sh checkout; backing
+  out is safe, the launch is already finalized.
+
+Rule: click through, back out of any checkout, then confirm the
+listing/launch page exists (HTTP 200) before reporting `NEEDS_PAYMENT`.
+Distinct from pattern 5 (a paid option pre-selected alongside a free one) —
+here the paid option is disguised as the ONLY option.
+
+**Confirmed on:** DevHunt ($49 button, $0 spent, listing live), Fazier
+(checkout backed out, launch live).
+
+## 18. Profile-strength gates that tempt invented data: leave fields unset or skip the site
+
+**Symptom.** A "profile strength" meter (e.g. stuck at 70%) nags for fields
+you cannot answer truthfully, or a gate demands a false attestation.
+
+**Solution.** Never close the gap with invented data:
+- F6S's location combobox is CITY-ONLY — typing "Norway" matched small US
+  towns, so a country-level answer would have placed the company in the
+  wrong country. Leave it unset at 70% strength.
+- Dang.ai required a mandatory FALSE "this is an AI tool" attestation for a
+  non-AI product — skip the site entirely. The fit rule beats backlink value
+  (same policy as the AI-directory skips).
+
+A 70% profile with true data survives review; a 100% profile with a lie gets
+the listing flagged.
+
+**Confirmed on:** F6S (location left unset), Dang.ai (site skipped).
+
+## 19. Locked Chromium profiles: clone minus Singleton* and drive the clone
+
+**Symptom.** `launchPersistentContext` fails or hangs because a leftover
+Chromium process holds the profile's lock.
+
+**Detection.** `SingletonLock` / `SingletonSocket` / `SingletonCookie` files
+sit in the user_data_dir; `ps` shows a zombie Chromium started with that
+`--user-data-dir`.
+
+**Solution.** rsync the profile to a temp dir EXCLUDING the lock files and
+launch the clone:
+
+```bash
+rsync -a --exclude 'Singleton*' state/profiles/<site>/ /tmp/<site>-clone/
+```
+
+Session cookies survive; the lock does not. (Killing the zombie process also
+works but risks losing state the dead run was holding.)
+
+**Confirmed on:** DevHunt run.
+
+## 20. Account-social-link gates: park or skip; Google sessions expire fast
+
+**Symptom.** Submission requires linking a Google/LinkedIn social profile to
+the account plus a team review, or a Google OAuth session in the automation
+profile dies mid-campaign.
+
+**Solution.** Social-link + human-review gates defeat unattended automation:
+park the site with a verified dormant account (credentials recorded) or skip
+it — the OAuth dance plus review queue can cost more than the link is worth
+(Crunchbase was skipped on that call). When you DO use Google OAuth in an
+automation profile, sessions expire FAST: do all Google-dependent steps in
+the same sitting as the consent, and never assume tomorrow's run is still
+logged in.
+
+**Confirmed on:** Crunchbase (parked/skipped), StartupBase (Google OAuth
+completed in one sitting).

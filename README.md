@@ -106,6 +106,9 @@ contract in [docs/ADAPTER_CONTRACT.md](docs/ADAPTER_CONTRACT.md).
 | Launching Next | `adapters/launching-next.js` | Plain HTML form + math captcha | MVP |
 | Startup Stash | `adapters/startup-stash.js` | Typeform | MVP |
 | aitoolslist.io | `adapters/aitoolslist.js` | Tally embed | MVP |
+| OpenHunts | `adapters/openhunts.js` | better-auth wizard; needs a pre-authenticated OAuth profile; Turnstile auto-solves; deselects the pre-ticked paid tier | MVP |
+| F6S | `adapters/f6s.js` | Email/password + reCAPTCHA v2 single click + 6-digit email OTP (one assisted step); company profile editor autosaves | MVP |
+| DevHunt | `adapters/devhunt.js` | Next.js SPA; needs a GitHub OAuth profile; launch-week select gates the submit button; "$49" button creates the listing free (upsell backed out) | MVP |
 
 To add a site: write `adapters/<site-slug>.js` per the contract, verify with
 `adapter-test --dry-run`, then add the site to `allowed_sites`.

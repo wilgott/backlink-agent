@@ -109,7 +109,7 @@ of this repo).
 5. **Git is per-subcommand.** `git commit` does not imply `git worktree` or `git stash`. Push-driven deploy flows need `git push` — note it also permits `--force`; split it out if that matters to you.
 6. **User-level > project-level for this file.** Project `settings.local.json`
    only helps one repo; the same agents run across many.
-5. **Keep the blast radius conscious.** `node:*`, `python3:*`, `rm:*`, `curl *`
+7. **Keep the blast radius conscious.** `node:*`, `python3:*`, `rm:*`, `curl *`
    together are arbitrary code execution + deletion. That is the accepted trade
    for unattended runs — mitigate by *not* adding deploy/push/destructive rules
    (keep `git push`, `wrangler deploy`, payment flows manual or per-project).
