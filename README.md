@@ -94,6 +94,8 @@ Rules for AI agents operating this repo: [docs/AGENTS.md](docs/AGENTS.md).
 
 Running unattended without approval prompts: [docs/PERMISSIONS.md](docs/PERMISSIONS.md).
 
+Field patterns from live campaigns (auth quirks, captcha flows, upsell traps): [docs/PATTERNS.md](docs/PATTERNS.md).
+
 ## Adapters
 
 Each supported site has a Node.js Playwright adapter implementing the

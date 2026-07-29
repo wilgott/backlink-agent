@@ -74,6 +74,24 @@ that document first, copy the closest existing adapter (plain form:
 `python -m backlink_agent adapter-test --site "<Name>" --dry-run` before any
 live submission.
 
+## Field patterns
+
+Before writing a new adapter or debugging a stuck submission, read
+[docs/PATTERNS.md](PATTERNS.md) — it documents what real directories do
+(auth quirks, gates, upsells) and the proven handling for each. The four
+rules that matter most:
+
+1. **Never fight captchas.** Turnstile auto-solves (wait for it); hCaptcha
+   uses the official accessibility-cookie flow. No solving services, no
+   clicking image grids.
+2. **Always deselect pre-selected paid options before the final submit** and
+   record what was deselected. "It was pre-ticked" is not a defense.
+3. **Probe API auth endpoints before assuming UI-only.** Supabase GoTrue and
+   NextAuth credentials APIs often work even when the UI shows OAuth only.
+4. **One reload = one restart for wizard forms.** Drive multi-step wizards in
+   a single browser session with zero reloads; on a stuck step, abort and
+   re-run from the top — never refresh.
+
 ## Useful commands
 
 ```bash
