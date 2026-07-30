@@ -73,7 +73,8 @@ of this repo).
   "mcp__playwright__browser_navigate_back",
   "mcp__playwright__browser_wait_for",
   "mcp__playwright__browser_resize",
-  "mcp__playwright__browser_file_upload",
+  "mcp__playwright__*",
+  "mcp__cloudflare__*",
   "mcp__playwright__browser_select_option",
   "mcp__playwright__browser_handle_dialog",
   "mcp__playwright__browser_hover",
@@ -128,8 +129,9 @@ of this repo).
    them as single commands. Single-purpose commands pass; compounds prompt.
 2. **Edit/Write are separate permission domains.** Allowing `Bash` does nothing
    for file-edit prompts. Add explicit `Edit(...)`/`Write(...)` path rules.
-3. **MCP tools are per-tool rules.** `mcp__playwright__browser_navigate` does
-   not imply `mcp__playwright__browser_file_upload`. List the extras explicitly.
+3. **MCP tools are per-tool rules — so use the server wildcard.** `mcp__playwright__browser_navigate` does
+   not imply `mcp__playwright__browser_file_upload`. Listing tools one by one is whack-a-mole:
+   `mcp__playwright__*` covers the whole server, including tools added in future versions.
 4. **WebFetch is per-domain unless you allow it bare.** New directory domains prompt every time during recon; a bare `WebFetch` rule is read-only and kills the whole class.
 5. **Git is per-subcommand.** `git commit` does not imply `git worktree` or `git stash`. Push-driven deploy flows need `git push` — note it also permits `--force`; split it out if that matters to you.
 6. **Env-prefixed commands break prefix rules.** `NODE_PATH=... node x.js` does NOT match `Bash(node:*)` — the env assignment changes the command head. Use absolute imports in ESM scripts (`import ... from '/abs/path/node_modules/playwright/index.mjs'`) instead of NODE_PATH. Same class: `VAR=1 python3 ...`.
