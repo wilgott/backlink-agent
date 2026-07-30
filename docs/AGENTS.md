@@ -92,6 +92,9 @@ rules that matter most:
    a single browser session with zero reloads; on a stuck step, abort and
    re-run from the top — never refresh.
 
+For paid-trap navigation, OTP quirks, and AI-prefill override, see
+[PATTERNS.md](PATTERNS.md) 21+.
+
 ## Useful commands
 
 ```bash
