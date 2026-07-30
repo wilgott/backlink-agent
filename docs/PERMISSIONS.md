@@ -134,7 +134,8 @@ of this repo).
 5. **Git is per-subcommand.** `git commit` does not imply `git worktree` or `git stash`. Push-driven deploy flows need `git push` — note it also permits `--force`; split it out if that matters to you.
 6. **Env-prefixed commands break prefix rules.** `NODE_PATH=... node x.js` does NOT match `Bash(node:*)` — the env assignment changes the command head. Use absolute imports in ESM scripts (`import ... from '/abs/path/node_modules/playwright/index.mjs'`) instead of NODE_PATH. Same class: `VAR=1 python3 ...`.
 7. **Profile cloning needs `rsync`; process inspection needs `pkill`/`lsof`.** The locked-profile workaround (rsync minus Singleton*) and stale-Chromium cleanup prompt without these.
-8. **User-level > project-level for this file.** Project `settings.local.json`
+8. **Heredocs and shell loops are un-fixable by rules.** `cat > f << 'EOF'` and `for i in ...` prompt as compound units no matter how broad your Bash rules are. The fix is behavioral: write files with the file-writing tool, loop in Python/Node, run one command at a time. Put this rule in every agent brief.
+9. **User-level > project-level for this file.** Project `settings.local.json`
    only helps one repo; the same agents run across many.
 7. **Keep the blast radius conscious.** `node:*`, `python3:*`, `rm:*`, `curl *`
    together are arbitrary code execution + deletion. That is the accepted trade
