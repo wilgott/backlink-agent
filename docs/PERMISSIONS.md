@@ -143,5 +143,10 @@ of this repo).
 
 ## When an agent still asks for something
 
-Treat it as a policy gap, not a one-off: add the rule here (and to your
-settings.json) instead of approving the same prompt repeatedly.
+Treat it as a policy gap, not a one-off: **add the rule to settings.json
+directly and proceed** — do not wait for a human to approve prompts one by
+one. Only pause for a human when the permission is genuinely risky: `sudo`,
+payments/purchases, reading private credentials outside the agreed stores,
+force-push, account deletion, or anything irreversible. Everything else
+(reads, writes inside the projects dir, browser automation, package installs,
+git plumbing, API calls) gets added and the run continues.
