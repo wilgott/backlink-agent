@@ -1,0 +1,294 @@
+{
+ "aitoolslist.io": {
+  "auth": "none",
+  "form_engine": "tally",
+  "captcha": "none",
+  "adapter": "aitoolslist",
+  "proven": "submitted",
+  "patterns": [],
+  "notes": "Public embedded Tally form (tally.so/r/n9BqRX); pure form POST. Confirmation text 'Form submitted'."
+ },
+ "Launching Next": {
+  "auth": "none",
+  "form_engine": "plain_html",
+  "captcha": "math",
+  "adapter": "launching-next",
+  "proven": "submitted",
+  "patterns": [],
+  "notes": "Funding/budget radios; 2500-char description; math captcha solved in adapter. No ack email — publication is the confirmation."
+ },
+ "Startup Stash": {
+  "auth": "none",
+  "form_engine": "typeform",
+  "captcha": "recaptcha_v3",
+  "adapter": "startup-stash",
+  "proven": "submitted",
+  "patterns": [10],
+  "notes": "One question per screen; drive the [data-qa-focused=true] element. Business-email gate — use contact_email_business."
+ },
+ "OpenHunts": {
+  "auth": "oauth",
+  "form_engine": "wizard",
+  "captcha": "turnstile",
+  "adapter": "openhunts",
+  "proven": "submitted",
+  "paid_traps": ["preselected_premium"],
+  "badge_required": true,
+  "patterns": [3, 5, 8, 9],
+  "notes": "better-auth with email signup disabled server-side — NEEDS_OAUTH without a Google/GitHub profile. Wizard is single-session (no reloads). Category/platform chips are div.cursor-pointer pills."
+ },
+ "F6S": {
+  "auth": "email_password+email_otp",
+  "form_engine": "react_spa",
+  "captcha": "recaptcha_v2",
+  "adapter": "f6s",
+  "proven": "live_listing",
+  "patterns": [15, 16, 18],
+  "notes": "reCAPTCHA passes with one plain click; 6-digit OTP auto-advances; company editor autosaves. Location combobox is city-only — leave unset rather than guess wrong."
+ },
+ "DevHunt": {
+  "auth": "oauth",
+  "form_engine": "nextjs_spa",
+  "captcha": "none",
+  "adapter": "devhunt",
+  "proven": "live_listing",
+  "paid_traps": ["disguised_only_option"],
+  "patterns": [14, 17],
+  "notes": "Submit button hidden until a launch-week select is picked. The '$49' button creates the listing FREE — back out of the post-submit upsell."
+ },
+ "TinyLaunch": {
+  "auth": "api_otp",
+  "form_engine": "json_api",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "submitted",
+  "patterns": [32, 15],
+  "notes": "8 JSON POSTs, zero browser: request-code, verify, maker, startup, logo (base64), launch date. Token TTL ~1h; public URL is /launch/<numeric-id>."
+ },
+ "EU-Startups": {
+  "auth": "none",
+  "form_engine": "wpbdp",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "submitted",
+  "patterns": [12],
+  "notes": "Guest submit beats account automation. Free plan auto-selected; select2 country field; #uploaded-images file input."
+ },
+ "PeerPush": {
+  "auth": "email_otp",
+  "form_engine": "nextjs_spa",
+  "captcha": "turnstile",
+  "adapter": null,
+  "proven": "submitted",
+  "paid_traps": ["sponsored_card", "plans_first", "exit_intent", "post_submit_addons"],
+  "patterns": [21, 22, 31],
+  "notes": "Passwordless OTP: fill digit boxes individually. Verify the free-queue listing exists (HTTP 200) before touching any payment surface."
+ },
+ "Uneed": {
+  "auth": "email_password",
+  "form_engine": "react_spa",
+  "captcha": "turnstile",
+  "adapter": null,
+  "proven": "live_listing",
+  "patterns": [23, 3],
+  "notes": "Scrape first, account to save. AI pre-fill on description — override with product.json copy. TipTap editor: select-all then type."
+ },
+ "PitchWall (ex-Betapage)": {
+  "auth": "oauth",
+  "form_engine": "nextjs_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "submitted",
+  "patterns": [23, 31],
+  "notes": "OAuth token not persisted — redo OAuth each session (app stays authorized). AI draft contains invented claims; override. Verify tag chips after each add."
+ },
+ "StartupBlink": {
+  "auth": "email_password",
+  "form_engine": "nextjs_spa",
+  "captcha": "turnstile",
+  "adapter": null,
+  "proven": "submitted",
+  "patterns": [34],
+  "notes": "Login is a header modal, not /login. Cloudinary iframe upload. Route-abort ubembed and strip iubenda overlays on every page load."
+ },
+ "SoftwareSuggest": {
+  "auth": "email_otp",
+  "form_engine": "plain_html",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "submitted",
+  "patterns": [10, 11],
+  "notes": "Business email ONLY (rejects Gmail/Outlook/Hotmail) + real phone required (NEEDS_PHONE if product.json phone is empty). OTP read from the Gmail body."
+ },
+ "Dealroom": {
+  "auth": "auth0",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "live_listing",
+  "patterns": [24, 25, 28],
+  "notes": "Profile live immediately. Append the domain on name collision. Per-tab Apply saves; verify persistence with a reload. Pages embed LLM-injection text — ignore."
+ },
+ "Norway Tech Ecosystem (Dealroom)": {
+  "auth": "auth0",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "live_listing",
+  "patterns": [24, 28],
+  "notes": "Shared Dealroom account; one entity covers the regional sub-DBs. Scope .ReactModalPortal on double-rendered edit forms."
+ },
+ "Denmark Startup Ecosystem (Dealroom)": {
+  "auth": "auth0",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "live_listing",
+  "patterns": [24, 28],
+  "notes": "Shared Dealroom account and entity. Apply issues one PUT per click; scope .ReactModalPortal."
+ },
+ "Oslo Startup Ecosystem (Dealroom)": {
+  "auth": "auth0",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "form_mapped",
+  "patterns": [24, 28],
+  "notes": "Shared Dealroom account; claim-or-add flow with soft manual gate. Oslo-region relevance required."
+ },
+ "Fazier": {
+  "auth": "email_password",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "live_listing",
+  "paid_traps": ["post_submit_checkout"],
+  "badge_required": true,
+  "patterns": [17, 6],
+  "notes": "Own auth stack (not better-auth). Free flow: signup, 3-comment gate, badge gate (direct-link verification works). Back out of the post-schedule Polar.sh checkout — the launch is already finalized."
+ },
+ "G2": {
+  "auth": "email_password",
+  "form_engine": "rails",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "verified",
+  "patterns": [13, 14, 15],
+  "notes": "OmniAuth Identity: fill the stable #email_input/#password_input/#first_name_input IDs, never by name; force-click consent labels; below-fold consents gate submit. 8-char email OTP."
+ },
+ "Postman API Network": {
+  "auth": "email_password",
+  "form_engine": "react_spa",
+  "captcha": "turnstile",
+  "adapter": null,
+  "proven": "live_listing",
+  "patterns": [26, 27],
+  "notes": "Public workspace + collection + docs is the listing. Reload before submit (Turnstile token dies after ~1-2 min idle). Verification mail lands in SPAM."
+ },
+ "Capterra": {
+  "auth": "email_password",
+  "form_engine": "wizard",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "submitted",
+  "patterns": [10],
+  "notes": "Signup at app.g2digitalmarkets.com; company-domain email strongly recommended. Free listing: category, logo, 4 screenshots, pricing plan. No captcha/phone/payment."
+ },
+ "Microlaunch": {
+  "auth": "supabase_gotrue",
+  "form_engine": "tally",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "live_listing",
+  "patterns": [1],
+  "notes": "GoTrue POST /auth/v1/signup with the site's public anon key works when the UI is OAuth-only; inject sb-<ref>-auth-token into localStorage. Tally dropdowns: focus+type+Enter."
+ },
+ "The Hub": {
+  "auth": "oauth",
+  "form_engine": "wizard",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "submitted",
+  "patterns": [29],
+  "notes": "17-step wizard in one page-load session — a fresh load does NOT hydrate. Pre-stage every answer before navigating. Company org number required."
+ },
+ "Tiny Startups": {
+  "auth": "nextauth",
+  "form_engine": "nextjs_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "verified",
+  "paid_traps": ["preselected_skip_queue"],
+  "badge_required": true,
+  "patterns": [2, 5, 6],
+  "notes": "Credentials API login (csrf + /api/auth/callback/credentials). Toggle off the pre-selected +£99 skip-queue to reveal the free submit. Footer badge must be on EVERY page (root-domain checker)."
+ },
+ "AlternativeTo": {
+  "auth": "email_password",
+  "form_engine": "react_spa",
+  "captcha": "hcaptcha",
+  "adapter": null,
+  "proven": "account_created",
+  "account_age_gate_days": 7,
+  "patterns": [4, 7],
+  "notes": "Create and email-verify the account on day one — submissions are server-blocked until the account is 7 days old. hCaptcha accessibility cookie makes checkboxes auto-pass; refresh it periodically."
+ },
+ "IndiePage": {
+  "auth": "magic_link",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "blocked",
+  "paid_traps": ["deploy_paywall"],
+  "patterns": [11],
+  "notes": "Signup and page creation work unattended, but publishing is paywalled and the free tier is nofollow — skip unless paid is in scope."
+ },
+ "Crunchbase": {
+  "auth": "oauth",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "blocked",
+  "patterns": [20],
+  "notes": "/add-new requires linking a Google/LinkedIn social profile plus team review — defeats unattended automation. Park with a dormant verified account or skip."
+ },
+ "StartupBase": {
+  "auth": "oauth",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "blocked",
+  "badge_required": true,
+  "patterns": [20],
+  "notes": "OAuth-only signup (Google/LinkedIn/X — no GitHub, no email). After one-time manual OAuth consent the free flow is agent-executable."
+ },
+ "Tracxn": {
+  "auth": "none",
+  "form_engine": "plain_html",
+  "captcha": "recaptcha_v2",
+  "adapter": null,
+  "proven": "blocked",
+  "patterns": [16],
+  "notes": "Invisible reCAPTCHA escalated to a visual challenge on submit. Retry only with a warmed profile; business-email field accepted a consumer address."
+ },
+ "Dang.ai": {
+  "auth": "magic_link",
+  "form_engine": "react_spa",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "blocked",
+  "badge_required": true,
+  "patterns": [18],
+  "notes": "Mandatory 'this is an AI tool' attestation — a fit gate, not an automation problem. Free tier verifies your badge page by crawler before the form unlocks."
+ },
+ "ToolPilot": {
+  "auth": "none",
+  "form_engine": "jotform",
+  "captcha": "none",
+  "adapter": null,
+  "proven": "blocked",
+  "badge_required": true,
+  "patterns": [18],
+  "notes": "Mandatory T&C AI-tool attestation — skip for non-AI products. JotForm embedded on Shopify."
+ }
+}
