@@ -77,7 +77,20 @@ of this repo).
   "mcp__playwright__browser_select_option",
   "mcp__playwright__browser_handle_dialog",
   "mcp__playwright__browser_hover",
-  "mcp__playwright__browser_navigate_forward"
+  "mcp__playwright__browser_navigate_forward",
+  "Bash(rsync:*)",
+  "Bash(pkill:*)",
+  "Bash(lsof:*)",
+  "Bash(tar:*)",
+  "Bash(unzip:*)",
+  "Bash(zip:*)",
+  "Bash(open:*)",
+  "Read(//tmp/**)",
+  "Read(//~/.config/**)",
+  "mcp__playwright__browser_run_code",
+  "mcp__playwright__browser_find",
+  "mcp__playwright__browser_drop",
+  "mcp__playwright__browser_network_request"
 ]
 ```
 
@@ -107,7 +120,9 @@ of this repo).
    not imply `mcp__playwright__browser_file_upload`. List the extras explicitly.
 4. **WebFetch is per-domain unless you allow it bare.** New directory domains prompt every time during recon; a bare `WebFetch` rule is read-only and kills the whole class.
 5. **Git is per-subcommand.** `git commit` does not imply `git worktree` or `git stash`. Push-driven deploy flows need `git push` — note it also permits `--force`; split it out if that matters to you.
-6. **User-level > project-level for this file.** Project `settings.local.json`
+6. **Env-prefixed commands break prefix rules.** `NODE_PATH=... node x.js` does NOT match `Bash(node:*)` — the env assignment changes the command head. Use absolute imports in ESM scripts (`import ... from '/abs/path/node_modules/playwright/index.mjs'`) instead of NODE_PATH. Same class: `VAR=1 python3 ...`.
+7. **Profile cloning needs `rsync`; process inspection needs `pkill`/`lsof`.** The locked-profile workaround (rsync minus Singleton*) and stale-Chromium cleanup prompt without these.
+8. **User-level > project-level for this file.** Project `settings.local.json`
    only helps one repo; the same agents run across many.
 7. **Keep the blast radius conscious.** `node:*`, `python3:*`, `rm:*`, `curl *`
    together are arbitrary code execution + deletion. That is the accepted trade
