@@ -31,8 +31,9 @@ def test_automation_scores_are_ints_in_range(sites):
 
 
 def test_all_sites_have_known_status(sites):
-    """The seed DB now carries execution statuses (submitted/blocked/etc.)
-    from the live campaign — assert every row has SOME non-empty status."""
+    """Every row carries a non-empty status: 'live' unless the directory
+    itself is a generic no-go (e.g. 'disqualified'). Per-project execution
+    state lives in the SQLite state DB, not the seed CSV."""
     for site in sites:
         assert _get(site, "status"), (
             f"{_get(site, 'name')}: unexpected status {_get(site, 'status')!r}"
