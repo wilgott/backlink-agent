@@ -696,3 +696,19 @@ Do this on EVERY page load of the affected site, not just the entry page.
 
 **Confirmed on:** StartupBlink (iubenda banner + Unbounce promo iframes
 intercepted clicks AND popup-redirected tabs).
+## 35. Keychain-locked browser profiles: clone before you open
+
+**Symptom.** The user gets a macOS dialog: "Chromium wants to access your
+keychain" — a password form they did not expect, mid-run.
+
+**Detection.** Any profile originally created by an MCP-managed Chrome or a
+headed manual login (e.g. an OAuth consent profile). Cookies are encrypted
+with the OS keychain; any new process that opens the profile triggers the
+prompt.
+
+**Solution.** Never `launchPersistentContext` directly on such a profile.
+`rsync` it to a temp dir minus `Singleton*` locks and drive the clone —
+plain copies decrypt fine on the same machine. Create NEW profiles with your
+own Playwright launch (no keychain), never the MCP Chrome's profile dir.
+Confirmed: StackShare/DevHunt/Findly profile clones.
+
