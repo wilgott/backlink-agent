@@ -16,7 +16,7 @@ from typing import Optional
 
 import click
 
-from backlink_agent import __version__, directories, email as email_mod
+from backlink_agent import __version__, directories, email as email_mod, report as report_mod
 from backlink_agent.config import (
     Product,
     Settings,
@@ -271,6 +271,43 @@ def status(settings_path: str) -> None:
         click.echo("\npending email verification:")
         for row in pending:
             click.echo(f"  {row['site_name']} (last attempt {row['last_attempt_at']})")
+
+
+@main.command()
+@click.option("--settings", "settings_path", default="./settings.json",
+              type=click.Path(exists=True, dir_okay=False))
+@click.option("--out", "out_path", default=None, type=click.Path(dir_okay=False),
+              help="Output file (default: <log_dir>/report.html).")
+@click.option("--open", "open_browser", is_flag=True,
+              help="Open the report after writing (macOS 'open').")
+def report(settings_path: str, out_path: Optional[str], open_browser: bool) -> None:
+    """Generate a self-contained HTML dashboard of submission state."""
+    settings = load_settings(settings_path)
+    root = _repo_root(settings_path)
+    sites = _load_sites(root)
+    db_path = resolve_repo_path(settings, settings_path, settings.state_db)
+    records: dict = {}
+    if db_path.is_file():
+        with StateStore(db_path) as state:
+            for site in sites:
+                rec = state.get(site.name)
+                if rec:
+                    records[site.name] = rec
+    if out_path is None:
+        out = resolve_repo_path(settings, settings_path, settings.log_dir) / "report.html"
+    else:
+        out = Path(out_path)
+    product_name = ""
+    product_path = resolve_product_path(settings, settings_path)
+    if product_path.is_file():
+        product_name = load_product(product_path).product.name
+    title = f"{product_name} — Backlink Report" if product_name else "Backlink Agent — Submission Report"
+    written = report_mod.write_report(sites, records, out, title=title)
+    click.echo(f"wrote {written}")
+    if open_browser:
+        import subprocess
+
+        subprocess.run(["open", str(written)], check=False)
 
 
 @main.command("adapter-test")

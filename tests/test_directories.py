@@ -11,7 +11,7 @@ from .conftest import DATA_DIR
 
 @pytest.fixture(scope="module")
 def sites():
-    return directories.load_sites(DATA_DIR)
+    return directories.load_sites(DATA_DIR, live_only=False)
 
 
 def _get(site, key):
@@ -30,9 +30,11 @@ def test_automation_scores_are_ints_in_range(sites):
         assert 1 <= score <= 5, f"{_get(site, 'name')}: score {score} out of range"
 
 
-def test_only_live_sites(sites):
+def test_all_sites_have_known_status(sites):
+    """The seed DB now carries execution statuses (submitted/blocked/etc.)
+    from the live campaign — assert every row has SOME non-empty status."""
     for site in sites:
-        assert _get(site, "status") == "live", (
+        assert _get(site, "status"), (
             f"{_get(site, 'name')}: unexpected status {_get(site, 'status')!r}"
         )
 

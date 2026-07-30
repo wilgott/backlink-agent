@@ -62,7 +62,18 @@ python -m backlink_agent verify-emails
 
 # 8. See where things stand
 python -m backlink_agent status
+
+# 9. Generate the HTML dashboard
+python -m backlink_agent report --open
 ```
+
+## Dashboard
+
+`python -m backlink_agent report` writes a self-contained HTML dashboard
+(default `<log_dir>/report.html`, override with `--out`) joining the
+directory database with the state DB: stat tiles, status/score
+distributions, and a searchable, sortable per-site table. No external
+dependencies — it opens straight from disk (`--open` launches it on macOS).
 
 ## The allowlist
 
