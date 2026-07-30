@@ -87,6 +87,15 @@ of this repo).
   "Bash(open:*)",
   "Read(//tmp/**)",
   "Read(//~/.config/**)",
+  "Read(//~/Downloads/**)",
+  "Write(//tmp/**)",
+  "Edit(//tmp/**)",
+  "Bash(osascript:*)",
+  "Bash(defaults:*)",
+  "Bash(plutil:*)",
+  "Bash(killall:*)",
+  "Bash(mdfind:*)",
+  "Bash(xattr:*)",
   "mcp__playwright__browser_run_code",
   "mcp__playwright__browser_find",
   "mcp__playwright__browser_drop",
@@ -105,6 +114,9 @@ of this repo).
 | `cat` `head` `tail` `sed` `awk` `jq` `grep` `find` `sort` `uniq` `cut` `diff` `wc` | Reading form HTML, parsing JSON API responses, updating the directory database. |
 | `date` `sleep` | Log timestamps; polling between email-verification checks. |
 | `sips` | Resizing logos when a site demands a specific pixel size. |
+| `Write`/`Edit` on `/tmp` | Agents stage scripts, screenshots, and state dumps in /tmp constantly. |
+| `Read` on `~/Downloads` | OAuth client-secret files typically live there (Gmail setup). |
+| macOS utils (`osascript`, `defaults`, `plutil`, `killall`, `mdfind`, `xattr`) | Browser/profile housekeeping on macOS. |
 | `Edit`/`Write` on your projects dir | Agents write adapter scripts, logs, and state files constantly. Scope to your projects root, not `/`. |
 | Playwright MCP extras | `file_upload` (logo/screenshot uploads), `select_option` (category dropdowns), `handle_dialog` (confirm dialogs). These prompt on nearly every submission without the rules. |
 
