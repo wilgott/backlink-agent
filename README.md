@@ -103,7 +103,7 @@ decision per site so you can review before submitting.
 Field-by-field documentation: [examples/settings.schema.md](examples/settings.schema.md).
 Rules for AI agents operating this repo: [docs/AGENTS.md](docs/AGENTS.md).
 
-Running unattended without approval prompts: [docs/PERMISSIONS.md](docs/PERMISSIONS.md).
+Running unattended without approval prompts: [docs/PERMISSIONS.md](docs/PERMISSIONS.md) — or merge the ready-made [examples/claude-code-allowlist.json](examples/claude-code-allowlist.json) into `~/.claude/settings.json` `permissions.allow` and you will not be prompted again.
 
 Field patterns from live campaigns (auth quirks, captcha flows, upsell traps): [docs/PATTERNS.md](docs/PATTERNS.md).
 
