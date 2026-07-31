@@ -11,7 +11,7 @@
 // expired, this adapter emits NEEDS_OAUTH with instructions — it never tries
 // to register or log in itself.
 //
-// Field notes (proven 2026-07-29, klinky.io campaign):
+// Field notes (proven 2026-07-29, pilot campaign):
 // - Cloudflare Turnstile is present and AUTO-SOLVES (~5s); we never touch it
 //   and never report CAPTCHA_UNSOLVABLE for it (PATTERNS.md #3).
 // - The wizard keeps state in memory only: ONE session, ZERO reloads

@@ -1,7 +1,7 @@
 // Adapter: Launching Next (https://www.launchingnext.com/submit/)
 // Pure public HTML form, no login, math captcha, free tier.
-// Proven in the klinky.io pilot (see submissions-log.md): free submission
-// succeeds; publication is the confirmation (no ack email).
+// Proven in the pilot campaign: free submission succeeds;
+// publication is the confirmation (no ack email).
 //
 // Contract: docs/ADAPTER_CONTRACT.md
 //   node adapters/launching-next.js <input.json> <output.json>

@@ -1,6 +1,6 @@
 // Adapter: aitoolslist.io (https://aitoolslist.io/submit-ai-tool/)
 // Single-page Tally embed (tally.so iframe). No login, no payment.
-// Proven in the klinky.io pilot: confirmation text "Form submitted".
+// Proven in the pilot campaign: confirmation text "Form submitted".
 //
 // Field ids in the Tally iframe are UUIDs that change when the form owner
 // edits the form, so all selectors key off aria-label / placeholder text

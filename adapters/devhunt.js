@@ -2,7 +2,7 @@
 // Next.js SPA; GitHub OAuth only (no email/password signup). See
 // docs/PATTERNS.md sections 14, 17, 19 — read them before modifying this file.
 //
-// $49-BUTTON QUIRK (proven 2026-07-29, klinky.io campaign): the only visible
+// $49-BUTTON QUIRK (proven 2026-07-29, pilot campaign): the only visible
 // launch button says "$49", but clicking it created the listing FREE
 // immediately — payment is a POST-SUBMIT upsell page. We click the button,
 // back out of any checkout that appears, and verify the listing exists

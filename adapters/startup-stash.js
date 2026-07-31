@@ -1,8 +1,8 @@
 // Adapter: Startup Stash (https://form.typeform.com/to/b8EyDE)
 // Typeform one-question-per-screen flow.
 //
-// Ported from the proven klinky.io pilot script (startupstash-typeform2.js),
-// which completed the full flow on 2026-07-29. The reliability fix is the
+// Ported from a proven pilot script that completed the full
+// flow on 2026-07-29. The reliability fix is the
 // [data-qa-focused="true"] focused-block driver: Typeform marks the active
 // question block with that attribute, and we only ever read/act inside it.
 //

@@ -7,13 +7,13 @@
 // after the Join form is accepted, F6S emails a 6-digit code. The adapter
 // stops at the code screen and emits NEEDS_EMAIL_VERIFICATION with
 // expected_sender_pattern 'f6s.com'. The campaign driver reads the code from
-// the Gmail inbox (gmail_body.py / python -m backlink_agent verify-emails)
+// the Gmail inbox (python -m backlink_agent verify-emails)
 // and enters it — ONE assisted step in the same sitting (re-submitting the
 // login form in the same profile re-sends the code). Once the profile is
 // verified, every later run of this adapter skips signup and goes straight
 // to company creation / profile editing unattended.
 //
-// Field notes (proven 2026-07-29, klinky.io campaign):
+// Field notes (proven 2026-07-29, pilot campaign):
 // - Correct entry point is /main/authorization/login — f6s.com/sign-up 400s.
 // - reCAPTCHA v2 checkbox passed with ONE plain click (PATTERNS.md #16); on
 //   a visual challenge we stop with CAPTCHA_UNSOLVABLE (contract rule 5).
