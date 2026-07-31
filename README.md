@@ -1,5 +1,9 @@
 # backlink-agent
 
+[![GitHub stars](https://img.shields.io/github/stars/wilgott/backlink-agent?style=flat)](https://github.com/wilgott/backlink-agent/stargazers)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+
 Automate product submissions to backlink directories. Built AI-agent-first:
 an agent (Claude Code, Codex, ...) or a human on the CLI configures two JSON
 files, reviews a plan, and lets the tool fill and submit directory forms with
@@ -177,6 +181,28 @@ the notes before relying on them.
 - Seed database corrections (dead sites, changed costs, new scores) are
   welcome — include the evidence.
 - Run `pytest` before submitting changes to the Python core.
+
+## Support the project
+
+If backlink-agent saved you a weekend of directory forms, the most helpful
+things you can do:
+
+- **Star the repo** — [github.com/wilgott/backlink-agent](https://github.com/wilgott/backlink-agent).
+  Stars decide whether this stays maintained.
+- **Link back** — if the tool earned you listings, a link helps the next
+  founder find it. Drop the badge in your footer or README:
+
+  ```html
+  <a href="https://github.com/wilgott/backlink-agent" target="_blank" rel="noopener">
+    <img src="https://raw.githubusercontent.com/wilgott/backlink-agent/main/badges/powered-by-backlink-agent.svg"
+         alt="Powered by backlink-agent" width="200" height="54">
+  </a>
+  ```
+
+  (SVG also lives at [`badges/powered-by-backlink-agent.svg`](badges/powered-by-backlink-agent.svg) if you prefer to self-host.)
+
+- **Share your run** — issues and discussions with what worked / what broke
+  on which directory feed the patterns docs for everyone.
 
 ## License
 

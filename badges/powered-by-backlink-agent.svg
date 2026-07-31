@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="54" viewBox="0 0 200 54" role="img" aria-label="Powered by backlink-agent">
+  <rect x="1" y="1" width="198" height="52" rx="10" fill="#0A0A0A" stroke="#27272a" stroke-width="1.5"/>
+  <text x="100" y="22" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="9" font-weight="600" letter-spacing="2" fill="#868686">POWERED BY</text>
+  <text x="100" y="40" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#C8F135">backlink-agent</text>
+</svg>
