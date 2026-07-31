@@ -99,7 +99,19 @@
       "mcp__playwright__browser_run_code",
       "mcp__playwright__browser_find",
       "mcp__playwright__browser_drop",
-      "mcp__playwright__browser_network_request"
+      "mcp__playwright__browser_network_request",
+      "Bash(cd:*)",
+      "Bash(gh pr *)",
+      "Bash(gh issue *)",
+      "Bash(gh release *)",
+      "Bash(sqlite3:*)",
+      "Bash(ps:*)",
+      "Bash(tr:*)",
+      "Bash(tee:*)",
+      "Bash(xargs:*)",
+      "Bash(column:*)",
+      "Bash(pbcopy:*)",
+      "Bash(pbpaste:*)"
     ]
   }
 }

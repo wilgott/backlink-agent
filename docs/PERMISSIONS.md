@@ -91,6 +91,10 @@ of this repo).
   "Read(//~/Downloads/**)",
   "Write(//tmp/**)",
   "Edit(//tmp/**)",
+  "Bash(cd:*)",
+  "Bash(gh pr *)", "Bash(gh issue *)", "Bash(gh release *)",
+  "Bash(sqlite3:*)", "Bash(ps:*)", "Bash(tr:*)", "Bash(tee:*)",
+  "Bash(xargs:*)", "Bash(column:*)", "Bash(pbcopy:*)", "Bash(pbpaste:*)",
   "Bash(osascript:*)",
   "Bash(defaults:*)",
   "Bash(plutil:*)",
@@ -143,6 +147,15 @@ of this repo).
    together are arbitrary code execution + deletion. That is the accepted trade
    for unattended runs — mitigate by *not* adding deploy/push/destructive rules
    (keep `git push`, `wrangler deploy`, payment flows manual or per-project).
+
+10. **A missing small head poisons every compound.** `cd` was absent from this
+   list for weeks; every `cd /repo && pytest -q` prompted the human even though
+   `pytest` was allowed — compound commands are re-evaluated as units, so the
+   smallest unlisted member decides. Audit what agents actually ran (transcript
+   JSONLs under the session tasks dir) and add the mundane heads: `cd`, `ps`,
+   `tr`, `tee`, `xargs`, `sqlite3`, `pbcopy/pbpaste`. Then eliminate the
+   compounds themselves per lesson 8 (`git -C`, `npm --prefix`, absolute paths,
+   sleeps inside scripts).
 
 ## When an agent still asks for something
 
