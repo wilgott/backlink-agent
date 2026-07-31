@@ -29,11 +29,42 @@ discovery.
 It does **not** do discovery, solve visual captchas, invent answers for form
 fields, or act outside the allowlist.
 
-## Prerequisites
+## How it works (and what tokens are for)
 
-- Python 3.10+
-- Node.js 18+ (for the Playwright adapters)
-- A Google Cloud OAuth client secret (only if you use email verification)
+The intended operator is an AI agent, not a human clicking through forms:
+
+1. **You configure once** — `product.json` (your product facts) and
+   `settings.json` (what the agent may do: sites, actions, data classes,
+   cost cap). Plus the harness permission allowlist
+   (`examples/claude-code-allowlist.json`) so the agent never stops to ask.
+2. **The agent spends tokens to learn and execute.** It reads the compact
+   cheatsheet and per-site recipes (`docs/CHEATSHEET.md`, `data/recipes.json`)
+   — distilled knowledge from 60+ real registrations: which auth flow each
+   site uses, where the paid traps are, which captcha to expect. For sites
+   without a recipe, it explores the site, maps the form, and writes an
+   adapter script. That exploration is where LLM tokens go — the package
+   exists to minimize how much re-learning each project needs.
+3. **The agent runs unattended.** Submissions, email verifications, and OTP
+   reads happen without you; the SQLite state DB and `report` dashboard are
+   how you follow along afterwards.
+
+## Requirements
+
+- Python 3.10+ and Node.js 18+ (Playwright adapters).
+- **An email inbox the agent can READ unattended.** Registration flows send
+  verification links and OTP codes that must be read without a human. The
+  built-in integration is Gmail via OAuth with the **read-only** scope
+  (`gmail.readonly` — the agent cannot send, delete, or modify anything; see
+  `python -m backlink_agent auth gmail`). Requires a Google Cloud OAuth
+  client secret (free).
+- **Ideally: an address on your own domain.** Many directories reject
+  consumer Gmail addresses ("we only accept work/business emails"). The cheap
+  fix that keeps everything agent-readable: create `you@yourdomain` as a
+  forwarding alias to your Gmail — e.g. Cloudflare Email Routing (free) or
+  your registrar's forwarding. The agent then registers with the domain
+  address while still reading every mail from the one Gmail inbox.
+- A Playwright-compatible machine (macOS/Linux; headless Chromium works for
+  most sites, real Chrome for a few).
 
 ## Quick start
 
