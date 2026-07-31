@@ -53,7 +53,7 @@ if it does, every payment surface is optional; back out, spend $0. Distinct
 case: a priced button that is the ONLY option may still create a free listing
 — click through, back out of checkout, verify (P17).
 
-## All 35 patterns
+## All 36 patterns
 
 | # | Detect → Do |
 |---|---|
@@ -92,6 +92,7 @@ case: a priced button that is the ONLY option may still create a free listing
 | 33 | Shared MCP browser → your own `browser.newContext()` per task; pass storageState JSON between calls; fresh scope each call |
 | 34 | iubenda/Unbounce overlays eat clicks, popup-redirect tabs → route-abort + DOM-strip at every navigation |
 | 35 | Keychain prompt opening a profile → never launch MCP-created profiles directly; rsync-clone first |
+| 36 | Google OAuth-only + automation browser blocked → user logs in once in real browser; extract that domain's cookies (Keychain prompt), addCookies into your profile |
 
 ## Adapter result statuses
 

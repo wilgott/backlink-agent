@@ -711,3 +711,32 @@ plain copies decrypt fine on the same machine. Create NEW profiles with your
 own Playwright launch (no keychain), never the MCP Chrome's profile dir.
 Confirmed: StackShare/DevHunt/Findly profile clones.
 
+
+## 36. Google blocks OAuth in automation browsers: transfer the session cookie instead
+
+**Symptom.** The site only offers Google sign-in, and Google refuses the
+automation browser: "This browser or app may not be secure. Try using a
+different browser." Happens in fresh Playwright profiles, headed or not.
+
+**Solution.** Let the user log in ONCE in their real browser, then move the
+session — not the login — into your profile:
+
+1. The user logs into the target site in their everyday browser (Chrome).
+2. Extract just the site's cookies from Chrome's cookie store (read-only
+   copy to /tmp first — the live DB is locked while Chrome runs). On macOS
+   the cookie values are AES-128-CBC encrypted; the key is
+   PBKDF2(keychain("Chrome Safe Storage"), salt="saltysalt", iter=1003,
+   16 bytes), IV = 16 space bytes, ciphertext prefixed `v10`, and newer
+   Chrome prepends a 32-byte host-key SHA-256 you strip after decryption.
+   The Keychain read triggers ONE user prompt (they approve; it is their
+   own browser's data for a session they just created — this is the
+   sanctioned path, never harvest beyond the target domain).
+3. `context.addCookies(decrypted)` in your own persistent profile, reload,
+   verify the logged-in UI (avatar present, no sign-in button). Session
+   cookies + `remember_web_*` survive; the profile is now durable.
+
+Scope the extraction query to the one domain (`WHERE host_key LIKE '%target%'`),
+write the JSON 0600, and delete it after injection.
+
+**Confirmed on:** NoonLaunch (Google-OAuth-only; automation browser blocked,
+cookie transfer from user's Chrome worked, session persisted).
