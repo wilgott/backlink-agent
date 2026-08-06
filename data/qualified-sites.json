@@ -220,7 +220,7 @@
   "review_time": "~180 days free queue (5 slots/day); 24h Premium (stated)",
   "requirements": "unknown beyond account; badge embed required for free-tier DF eligibility",
   "automation_score": 4,
-  "automation_notes": "Login agent-executable; free path has no payment/captcha, just very long queue and DF only guaranteed Top-3-with-badge. Paid tier is only guaranteed-dofollow path (drops to 3 if pursued).",
+  "automation_notes": "Login agent-executable; free path has no payment/captcha. Free slots: 5/day drop at 00:00 UTC and are consumed for the full ~180-day horizon — snipe just after 00:00 UTC for the newly opened date; launches 08:00 UTC. Wizard state is client-side only (one page load). DF only guaranteed Top-3-with-badge; paid tier is the only guaranteed-dofollow path (score drops to 3 if pursued).",
   "status": "live"
  },
  {
@@ -572,7 +572,7 @@
   "review_time": "1-3 business days editorial review (per guides)",
   "requirements": "Product name, tagline, website, description 500-1000 chars, categories, features, pricing, 4-6 screenshots (1920x1080), logo (300x300+ PNG), optional demo video, integrations; claim shell listing if present",
   "automation_score": 4,
-  "automation_notes": "Signup at app.g2digitalmarkets.com; company-domain email strongly recommended (Gmail may be rejected). Full free listing: category, logo, 4 screenshots, Free plan. No captcha/phone/payment. Review 1-2 business days.",
+  "automation_notes": "Signup at app.g2digitalmarkets.com; company-domain email strongly recommended (Gmail may be rejected). Full free listing: category, logo, 4 screenshots, Free plan. No captcha/phone/payment. Stated review 1-2 business days; observed ~1 week (2026-08). capterra.com hard-403s datacenter IPs — use residential/browser.",
   "status": "live"
  },
  {
@@ -764,7 +764,7 @@
   "review_time": "unknown",
   "requirements": "project details behind login",
   "automation_score": 4,
-  "automation_notes": "Sign-in verified (OAuth + email + Turnstile managed). CAUTION: footer 'Powered by Open-Launch' links open-launch.com — SAME ENGINE as the open-launch.com entry (queue booked into 2027); likely duplicate network, verify before submitting to both.",
+  "automation_notes": "Sign-in verified (OAuth + email + Turnstile managed). Free queue probe 2026-08-06: ALL ~180 schedulable dates showed 0 free slots — free tier effectively unavailable; only $9 Premium remains. CAUTION: footer 'Powered by Open-Launch' links open-launch.com — SAME ENGINE as the open-launch.com entry (queue booked into 2027); likely duplicate network, verify before submitting to both.",
   "status": "live"
  },
  {
