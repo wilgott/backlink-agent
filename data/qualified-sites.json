@@ -504,11 +504,11 @@
   "submission_method": "account_required",
   "cost": "free (revenue share only if monetized)",
   "requires_login": "yes — Google, GitHub, Facebook OAuth or email/password",
-  "captcha": "reCAPTCHA (likely invisible/v3)",
+  "captcha": "none observed",
   "review_time": "unknown",
   "requirements": "real public API: endpoints, base URL, auth scheme, docs",
   "automation_score": 4,
-  "automation_notes": "Login 500s for verified new accounts observed 2026-07 (post-acquisition platform bug) — probe before building an adapter. reCAPTCHA likely invisible/v3.",
+  "automation_notes": "Login works for email/password accounts (the 2026-07 post-acquisition HTTP 500 bug is resolved as of 2026-08-06). Listing flow: OpenAPI import is FILE-ONLY (no URL import); logo max 500px (512 rejected); category taxonomy has no Marketing/Analytics — Business Software is closest; free BASIC $0 plan can be enabled with paid tiers disabled. No captcha observed.",
   "status": "live"
  },
  {
