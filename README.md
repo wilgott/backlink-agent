@@ -48,6 +48,46 @@ The intended operator is an AI agent, not a human clicking through forms:
    reads happen without you; the SQLite state DB and `report` dashboard are
    how you follow along afterwards.
 
+## Case study: what the seed data cost (and what you skip)
+
+This repo was built during a real campaign: a bootstrapped SaaS
+([klinky.io](https://klinky.io), an A/B-testing link shortener) ran it with
+an AI agent for 9 days in July–August 2026 — **80+ directories actioned, $0
+spent**, every outcome logged. The seed database, cheatsheet, and recipes
+are the distilled output of that run.
+
+What producing that knowledge actually cost, measured from the campaign's
+own agent runs (per-agent token usage was recorded throughout):
+
+| Phase | What it took | What you get |
+|---|---|---|
+| Discovery — which directories exist | 8 parallel research agents, ~200 raw candidates, ~1–2M tokens, ~1 day | 134 qualified rows |
+| Qualification — is each site real, free, automatable? | Every site opened and verified live in a browser (DR, link type, captcha, login, cost, review time), ~4M tokens, 2–3 days | `automation_score`, cost/captcha/login columns |
+| Dead ends | 51 sites proven blocked, paid-only, OAuth-walled, broken, or off-fit — ~2M tokens of failures | Pre-marked in `status`/notes — you never re-pay them |
+| Execution recipes | ~80 sites driven end-to-end at a measured 47k–136k tokens each (~86k avg) — retries, widget quirks, paid traps | `docs/CHEATSHEET.md`, `data/recipes.json` |
+
+**~10M tokens and two weeks of autonomous agent time, distilled into a CSV
+you can read in ~15k tokens.** In practice: the orientation work (find
+sites, verify them, learn what's dead) drops from ~7M tokens and ~4 days to
+under an hour — and per-site execution gets cheaper too, because the
+recipes turn "three attempts with debugging" into "one attempt following
+the notes."
+
+Honest caveats, so the number survives scrutiny:
+
+- **The data decays.** We watched ~20% of source meta-lists go stale in
+  weeks (sites dropping free tiers). Treat scores/notes as a snapshot and
+  re-check before relying on them — the skeleton (which sites, which flows)
+  ages far slower than the details.
+- **It's niche-flavored.** Collected for a SaaS/maker product. Dev tools
+  and indie products get most of the value; enterprise products less.
+- **Tokens aren't dollars uniformly**, but at typical API pricing the
+  orientation work alone is a $20–70 head start — plus the days of
+  wall-clock you don't re-spend.
+
+The dashboard this produces: [examples/report-demo.html](examples/report-demo.html)
+(synthetic data — same rendering as the real campaign report).
+
 ## Requirements
 
 - Python 3.10+ and Node.js 18+ (Playwright adapters).
