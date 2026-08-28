@@ -18,5 +18,6 @@ dist/
 # NOTE: examples/product.json IS committed — it is the worked example.
 # Your real profile lives at the repo root and is gitignored:
 /product.json
+/settings.json
 examples/product.local.json
 .venv/
