@@ -37,6 +37,7 @@ VALID_STATUSES = {
     "ERROR",
     "NO_ADAPTER",  # set locally when the adapter file is missing
     "DRY_RUN",  # adapters may report this in dry-run mode
+    "CAPTCHA_UNSOLVABLE",
 }
 
 _TLDS = ("com", "io", "co", "net", "org", "ai", "dev", "app", "so", "sh")

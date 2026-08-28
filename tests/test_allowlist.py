@@ -135,3 +135,36 @@ def test_happy_path_allowed_with_required_actions():
     assert "form_post" in required
     # Every required action must be within the configured allowlist.
     assert required <= set(settings["allowlist"]["allowed_actions"])
+
+
+# --- derive_actions captcha heuristic ---------------------------------------
+
+
+def test_unknown_captcha_does_not_require_captcha_solving():
+    """CSV captcha=unknown must not block sites that are otherwise allowed."""
+    settings = make_settings()  # allowed_actions does not include captcha_solving
+    product = make_product()
+    for captcha in (
+        "unknown",
+        "unknown (form behind login)",
+        "UNKNOWN",
+        "unknown (likely present at signup)",
+    ):
+        result = allowlist.check(make_site(captcha=captcha), settings, product)
+        assert "captcha_solving" not in result.required_actions, captcha
+        assert result.allowed is True, f"{captcha}: {result.reason}"
+
+
+def test_nontrivial_captcha_still_requires_captcha_solving():
+    settings = make_settings()
+    product = make_product()
+    result = allowlist.check(make_site(captcha="reCAPTCHA v2"), settings, product)
+    assert "captcha_solving" in result.required_actions
+    assert result.allowed is False
+    assert "captcha_solving" in result.reason
+
+
+def test_math_captcha_does_not_require_captcha_solving():
+    result = allowlist.check(make_site(captcha="math"), make_settings(), make_product())
+    assert "captcha_solving" not in result.required_actions
+    assert result.allowed is True
