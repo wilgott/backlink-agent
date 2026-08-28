@@ -41,15 +41,27 @@ async function main() {
     const captcha = await detectCaptcha(page);
     if (captcha) return finish('CAPTCHA_UNSOLVABLE', { reason: `visible ${captcha} challenge on form` });
 
-    // Cookie consent overlay (silktide) intercepts pointer events — dismiss
-    // it, or remove the overlay outright if the button is unreachable.
-    const accept = page.locator('#silktide-wrapper button:has-text("Accept all"), button:has-text("Accept all")').first();
-    if (await accept.count()) {
-      await accept.click({ timeout: 5000 }).catch(async () => {
-        await page.evaluate(() => document.getElementById('silktide-wrapper')?.remove());
+    // Cookie consent overlay (silktide) intercepts pointer events. Dismiss
+    // or strip it on load AND again immediately before the submit click —
+    // the banner can reappear after fill.
+    async function dismissSilktide() {
+      const accept = page.locator('#silktide-wrapper button:has-text("Accept all"), button:has-text("Accept all")').first();
+      if (await accept.count()) {
+        await accept.click({ timeout: 5000 }).catch(async () => {
+          await page.evaluate(() => {
+            document.getElementById('silktide-wrapper')?.remove();
+            document.getElementById('silktide-backdrop')?.remove();
+          });
+        });
+      }
+      await page.evaluate(() => {
+        document.getElementById('silktide-wrapper')?.remove();
+        document.getElementById('silktide-backdrop')?.remove();
+        document.querySelectorAll('[id*="silktide"], .silktide-backdrop').forEach((el) => el.remove());
       });
+      await page.locator('#silktide-backdrop, #silktide-wrapper').waitFor({ state: 'detached', timeout: 3000 }).catch(() => {});
     }
-    await page.locator('#silktide-backdrop').waitFor({ state: 'detached', timeout: 5000 }).catch(() => {});
+    await dismissSilktide();
 
     // --- Fill the form (field names confirmed by live recon 2026-07-29) ---
     await page.locator('input[name="startupname"]').fill(product.name);
@@ -102,45 +114,95 @@ async function main() {
     }
 
     // --- Submit ---
-    record('submit', 'clicking Submit Startup');
+    // Click ONLY the form's input[name="formSubmit"]. The header CTA
+    // "Submit Startup +" is a <button> that navigates to /submit/ and wipes
+    // the filled form (false SUBMITTED on the previous live run).
+    await dismissSilktide();
+    const submitBtn = page.locator('input[name="formSubmit"]');
+    if (!(await submitBtn.count())) {
+      return finish('ERROR', { reason: 'input[name="formSubmit"] not found — cannot submit without hitting the header CTA' });
+    }
+    record('submit', 'clicking input[name=formSubmit] only');
+    const urlBefore = page.url();
     await Promise.all([
       page.waitForNavigation({ waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => null),
-      page.locator('input[name="formSubmit"], button:has-text("Submit Startup")').first().click(),
+      submitBtn.first().click({ timeout: 8000, force: true }),
     ]);
-    await page.waitForTimeout(3000);
+    // Cloudflare often serves a "Please wait while your request is being
+    // verified..." / "One moment, please..." interstitial on the POST.
+    // That is a JS challenge, not a visual captcha — wait it out.
+    async function onCfInterstitial() {
+      const title = (await page.title().catch(() => '')).toLowerCase();
+      const body = (await page.locator('body').innerText().catch(() => '')).slice(0, 400).toLowerCase();
+      return /one moment|please wait while your request is being verified|checking your browser|just a moment/i.test(title + ' ' + body);
+    }
+    for (let i = 0; i < 18; i++) {
+      if (!(await onCfInterstitial())) break;
+      record('cf_wait', { i, title: await page.title().catch(() => ''), url: page.url() });
+      if (i === 0) await shot(page, 'cf-interstitial');
+      await page.waitForTimeout(2500);
+    }
+    await page.waitForLoadState('domcontentloaded').catch(() => {});
+    await page.waitForTimeout(1500);
     await shot(page, 'after-submit');
+    if (await onCfInterstitial()) {
+      return finish('ERROR', {
+        reason: `Cloudflare verification interstitial did not clear after waiting (~45s). url=${page.url()} title=${await page.title().catch(() => '')}`,
+      });
+    }
+
+    const urlAfter = page.url();
+    const leftSubmit = !/\/submit\/?(\?|$)/i.test(new URL(urlAfter).pathname);
+    record('after_submit_url', { urlBefore, urlAfter, leftSubmit });
 
     const bodyText = (await page.locator('body').innerText()).replace(/\s+/g, ' ').slice(0, 3000);
     record('after_submit_text', bodyText.slice(0, 600));
 
     if (/already (been )?submitted/i.test(bodyText)) {
-      return finish('ALREADY_SUBMITTED', { confirmation_text: bodyText.slice(0, 500) });
+      return finish('ALREADY_SUBMITTED', { confirmation_text: bodyText.slice(0, 500), links_found: [urlAfter] });
     }
 
     // Validation failure: still on the form with an error message
-    const stillOnForm = await page.locator('input[name="startupname"]').count();
+    const stillOnForm = (await page.locator('input[name="startupname"]').count()) > 0;
     const errorMatch = bodyText.match(/(error|invalid|incorrect|wrong|please (fill|enter|correct)|required)[^.!?]{0,160}/i);
     if (stillOnForm && errorMatch) {
       return finish('ERROR', { reason: `form validation failed: ${errorMatch[0]}` });
+    }
+    // stillOnForm with NO error is the previous false-positive path (header
+    // CTA or cookie overlay ate the click). Never call that SUBMITTED.
+    if (stillOnForm && !leftSubmit) {
+      return finish('ERROR', {
+        reason: `still on /submit/ with startupname field present after clicking formSubmit (url=${urlAfter}). Form was not posted.`,
+      });
     }
 
     // The site offers a paid "within 1-business day" upgrade AFTER the free
     // submission. Never pay: only report NEEDS_PAYMENT if payment is required
     // to complete the submission itself.
-    const paymentRequired = /(card number|payment required|pay now to (submit|complete))/i.test(bodyText)
-      && !/thank|received|review|submitted/i.test(bodyText);
-    if (paymentRequired) {
+    const paymentRequired = /(card number|payment required|pay now to (submit|complete))/i.test(bodyText);
+    if (paymentRequired && !leftSubmit) {
       return finish('NEEDS_PAYMENT', {
         reason: 'site requires payment to complete submission',
         requested_action: { action: 'payment', details: bodyText.slice(0, 300) },
       });
     }
 
-    if (/thank|received|review|submitted|publish/i.test(bodyText)) {
-      return finish('SUBMITTED', { confirmation_text: bodyText.slice(0, 800) });
+    // Success = we left /submit/ OR a dedicated confirmation node is present.
+    // Do NOT regex the landing-page marketing copy (it always contains
+    // "review" / "publish" / "submitted").
+    const confirmNode = page.locator(
+      '.success, .thank-you, .confirmation, [class*="success"], [class*="thank"], [role="status"], h1, h2',
+    ).filter({ hasText: /thank you|submission received|successfully submitted|we.?ve received|your startup (is|has been)/i });
+    const hasConfirmNode = (await confirmNode.count()) > 0;
+    record('confirm_check', { leftSubmit, hasConfirmNode, stillOnForm });
+    if (leftSubmit || hasConfirmNode) {
+      const snippet = hasConfirmNode
+        ? (await confirmNode.first().innerText().catch(() => bodyText)).slice(0, 800)
+        : bodyText.slice(0, 800);
+      return finish('SUBMITTED', { confirmation_text: snippet, links_found: [urlAfter] });
     }
 
-    return finish('ERROR', { reason: `unexpected post-submit page: ${bodyText.slice(0, 300)}` });
+    return finish('ERROR', { reason: `unexpected post-submit page (still on form=${stillOnForm} url=${urlAfter}): ${bodyText.slice(0, 300)}` });
   } finally {
     await context.close().catch(() => {});
   }
