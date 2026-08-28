@@ -72,7 +72,7 @@ def derive_actions(site: Site) -> list[str]:
     - any form/api submission -> ``form_post``
     - ``account_required`` method or login needed -> ``account_creation``
     - email OTP / verification email hints -> ``email_verification``
-    - non-trivial captcha (not none/math/simple) -> ``captcha_solving``
+    - non-trivial captcha (not none/math/simple/unknown) -> ``captcha_solving``
     - paid-only cost -> ``payment``
     - logo/screenshot/image upload hints -> ``file_upload``
     - phone hints -> ``phone_verification``
@@ -90,7 +90,9 @@ def derive_actions(site: Site) -> list[str]:
     if re.search(r"email (otp|verification|confirm)|verification email|\botp\b", text):
         actions.add("email_verification")
     if captcha and captcha not in ("none", "no") and "none" not in captcha:
-        if not re.search(r"math|simple|text", captcha):
+        # "unknown" means the seed did not observe a challenge — do not
+        # treat missing recon as captcha_solving (blocks otherwise-automatable sites).
+        if "unknown" not in captcha and not re.search(r"math|simple|text", captcha):
             actions.add("captcha_solving")
     is_free, max_price = parse_cost(site.cost)
     if not is_free and max_price:
