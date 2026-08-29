@@ -89,9 +89,15 @@ def derive_actions(site: Site) -> list[str]:
         actions.add("account_creation")
     if re.search(r"email (otp|verification|confirm)|verification email|\botp\b", text):
         actions.add("email_verification")
-    if captcha and captcha not in ("none", "no") and "none" not in captcha:
-        if not re.search(r"math|simple|text", captcha):
-            actions.add("captcha_solving")
+    # Captcha handling: only flag captcha_solving for known challenging types
+    # unknown -> don't block (operator can try once and see)
+    # none/math/simple/text/honeypot -> no captcha_solving needed
+    # recaptcha/hcaptcha/turnstile -> requires captcha_solving
+    if captcha and captcha not in ("none", "no", "unknown", "none observed"):
+        if "none" not in captcha and not re.search(r"math|simple|text|honeypot", captcha):
+            # Only add captcha_solving for specific known challenging captcha types
+            if re.search(r"recaptcha|hcaptcha|turnstile|cf-turnstile|cloudflare", captcha):
+                actions.add("captcha_solving")
     is_free, max_price = parse_cost(site.cost)
     if not is_free and max_price:
         actions.add("payment")

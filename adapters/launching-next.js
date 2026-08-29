@@ -102,16 +102,26 @@ async function main() {
     }
 
     // --- Submit ---
-    record('submit', 'clicking Submit Startup');
+    // Use only input[name=formSubmit] to avoid clicking the header CTA which
+    // navigates to /submit/ and wipes the filled form (issue #1)
+    record('submit', 'clicking formSubmit');
+    const currentUrl = page.url();
     await Promise.all([
       page.waitForNavigation({ waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => null),
-      page.locator('input[name="formSubmit"], button:has-text("Submit Startup")').first().click(),
+      page.locator('input[name="formSubmit"]').click(),
     ]);
     await page.waitForTimeout(3000);
     await shot(page, 'after-submit');
 
+    // Check for Cloudflare interstitial that eats the POST (issue #8)
     const bodyText = (await page.locator('body').innerText()).replace(/\s+/g, ' ').slice(0, 3000);
     record('after_submit_text', bodyText.slice(0, 600));
+    
+    if (/please wait while your request is being verified/i.test(bodyText)) {
+      return finish('CAPTCHA_UNSOLVABLE', { 
+        reason: 'Cloudflare verification interstitial blocked the submission (Turnstile)' 
+      });
+    }
 
     if (/already (been )?submitted/i.test(bodyText)) {
       return finish('ALREADY_SUBMITTED', { confirmation_text: bodyText.slice(0, 500) });
@@ -122,6 +132,12 @@ async function main() {
     const errorMatch = bodyText.match(/(error|invalid|incorrect|wrong|please (fill|enter|correct)|required)[^.!?]{0,160}/i);
     if (stillOnForm && errorMatch) {
       return finish('ERROR', { reason: `form validation failed: ${errorMatch[0]}` });
+    }
+    
+    // If still on the form page (same URL), submission likely failed
+    const afterSubmitUrl = page.url();
+    if (stillOnForm && afterSubmitUrl === currentUrl) {
+      return finish('ERROR', { reason: 'still on form page after submit - submission may have failed' });
     }
 
     // The site offers a paid "within 1-business day" upgrade AFTER the free
@@ -136,7 +152,17 @@ async function main() {
       });
     }
 
-    if (/thank|received|review|submitted|publish/i.test(bodyText)) {
+    // More precise success detection: require both keyword AND (URL change OR form gone)
+    const successKeywords = /thank you|received|successfully submitted|submission complete/i.test(bodyText);
+    const urlChanged = afterSubmitUrl !== currentUrl && !afterSubmitUrl.includes('/submit/');
+    const formGone = !stillOnForm;
+    
+    if (successKeywords && (urlChanged || formGone)) {
+      return finish('SUBMITTED', { confirmation_text: bodyText.slice(0, 800) });
+    }
+    
+    // Loose match only if we're definitely off the form page
+    if ((urlChanged || formGone) && /review|submitted|publish/i.test(bodyText)) {
       return finish('SUBMITTED', { confirmation_text: bodyText.slice(0, 800) });
     }
 

@@ -35,6 +35,7 @@ VALID_STATUSES = {
     "NEEDS_OAUTH",
     "BLOCKED",
     "ERROR",
+    "CAPTCHA_UNSOLVABLE",  # adapter hit a captcha it cannot solve
     "NO_ADAPTER",  # set locally when the adapter file is missing
     "DRY_RUN",  # adapters may report this in dry-run mode
 }
@@ -127,13 +128,16 @@ def build_input(
     if not log_dir.is_absolute():
         log_dir = repo_root / log_dir
     state_dir = repo_root / "state"
+    # Include run_id in path so dry-run and live runs don't clobber each other
+    site_slug = slugify(site.name)
+    screenshot_dir = log_dir / date.today().isoformat() / f"{run_id[:8]}-{site_slug}"
     return {
         "run_id": run_id,
         "site": asdict(site),
         "product": flatten_product(product),
         "paths": {
-            "screenshot_dir": str(log_dir / date.today().isoformat()),
-            "user_data_dir": str(state_dir / "profiles" / slugify(site.name)),
+            "screenshot_dir": str(screenshot_dir),
+            "user_data_dir": str(state_dir / "profiles" / site_slug),
         },
         "headless": True,
         "dry_run": dry_run,
