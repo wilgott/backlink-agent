@@ -164,18 +164,48 @@ def auth_gmail() -> None:
               help="Override allowlist min_automation_score.")
 def plan(settings_path: str, limit: Optional[int], min_score: Optional[int]) -> None:
     """Show the allowlist decision for every site before submitting."""
+    import json
     settings, product, root = _load(settings_path)
     rows = plan_sites(_load_sites(root), settings, product, min_score=min_score)
     if limit is not None:
         rows = rows[:limit]
-    click.echo(f"{'SITE':<28} {'SCORE':>5}  {'DECISION':<8} REASON")
-    click.echo("-" * 90)
+    
+    # Load recipes for auth/adapter info
+    recipes_path = root / "data" / "recipes.json"
+    recipes = json.loads(recipes_path.read_text()) if recipes_path.exists() else {}
+    
+    click.echo(f"{'SITE':<26} {'SCORE':>5}  {'ADAPTER':<8} {'AUTH':<12} {'DECISION':<8} REASON")
+    click.echo("-" * 110)
+    warnings = []
     for site, decision in rows:
         verdict = "ALLOWED" if decision.allowed else "BLOCKED"
-        click.echo(f"{site.name:<28} {site.automation_score:>5}  {verdict:<8} {decision.reason}")
+        slug = slugify(site.name)
+        
+        # Check adapter exists
+        adapter_file = root / "adapters" / f"{slug}.js"
+        adapter_status = "YES" if adapter_file.exists() else "NO"
+        
+        # Get auth from recipe
+        recipe = recipes.get(site.name, {})
+        auth_type = recipe.get("auth", "-")[:10]
+        
+        click.echo(f"{site.name:<26} {site.automation_score:>5}  {adapter_status:<8} {auth_type:<12} {verdict:<8} {decision.reason}")
+        
+        # Collect warnings
+        if decision.allowed and not adapter_file.exists():
+            warnings.append(f"  WARNING: {site.name} is allowed but has NO adapter")
+        if recipe.get("captcha") == "unknown":
+            warnings.append(f"  NOTE: {site.name} has unknown captcha - try once to verify")
+    
+    click.echo("-" * 110)
     allowed = sum(1 for _, d in rows if d.allowed)
-    click.echo("-" * 90)
     click.echo(f"{allowed} allowed / {len(rows)} evaluated")
+    
+    # Print warnings
+    if warnings:
+        click.echo("\nWARNINGS:")
+        for w in warnings:
+            click.echo(w)
 
 
 @main.command()

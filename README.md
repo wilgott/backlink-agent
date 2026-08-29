@@ -110,6 +110,9 @@ The dashboard this produces: [examples/report-demo.html](examples/report-demo.ht
 
 ```bash
 # 1. Install the Python package
+# Note: On systems with PEP 668 (externally-managed-environment), use a venv:
+#   python -m venv .venv && source .venv/bin/activate && pip install -e .
+# Or use pipx: pipx install -e .
 pip install -e .
 
 # 2. Install the adapter runtime
