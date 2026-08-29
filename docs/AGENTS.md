@@ -19,6 +19,35 @@ exactly.
    Read [docs/PATTERNS.md](PATTERNS.md) only when the cheatsheet's one-liner
    is not enough.
 
+## Operator Loop (the happy path)
+
+This is the normal workflow. Execute these steps in order, stopping only
+when you hit a BLOCKED/NEEDS_* status that requires human decision.
+
+1. **Install Chromium** (once per environment):
+   `cd adapters && npx playwright install chromium`
+
+2. **Plan** (always first): `python -m backlink_agent plan`
+   - Review the allowlist decisions printed for each site
+   - Check that allowed sites have adapters (not "NO_ADAPTER")
+   - Verify fit: skip sites where the product doesn't match the directory
+
+3. **Dry-run one site**: `python -m backlink_agent adapter-test --site "Site Name" --dry-run`
+   - Confirms the adapter can fill the form without submitting
+   - Screenshots saved to logs/ for verification
+
+4. **Submit to allowed sites**: `python -m backlink_agent submit --limit N`
+   - Respects max_submissions_per_run from settings
+   - Records outcomes in state DB (idempotency)
+
+5. **Verify emails**: `python -m backlink_agent verify-emails`
+   - Polls Gmail inbox for verification links/OTP codes
+   - Prints them for manual action (MVP does not auto-click)
+
+6. **Report**: Print summary of SUBMITTED/ALREADY_SUBMITTED/NEEDS_* statuses
+
+Do NOT stop after step 2 (plan). Plan is preparation, not the deliverable.
+
 ## Hard rules
 
 - **Always run `plan` before `submit`.** `python -m backlink_agent plan`
