@@ -49,10 +49,13 @@ class EmailSettings(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     enabled: bool = True
-    provider: Literal["gmail"] = "gmail"
+    provider: Literal["gmail", "resend"] = "gmail"
     poll_interval_seconds: int = 30
     max_wait_minutes: int = 30
     allowed_sender_patterns: list[str] = [".*"]
+    # Resend-specific settings
+    resend_api_key: Optional[str] = None
+    resend_domain: Optional[str] = None
 
 
 class Settings(BaseModel):
