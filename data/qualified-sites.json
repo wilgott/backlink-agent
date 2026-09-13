@@ -2142,5 +2142,21 @@
   "automation_score": 1,
   "automation_notes": "DISQUALIFIED: official policy provides no backlinks; product page not indexed until >=1 review. Also gated by LinkedIn company page (>=10 employees), >=100 customers, non-role-based work email.",
   "status": "disqualified"
+ },
+ {
+  "name": "Nick Launches",
+  "url": "https://nicklaunches.com/submit/",
+  "category": "launch_platform",
+  "dr_estimate": "75 (VerifiedDR)",
+  "link_type": "dofollow",
+  "submission_method": "form (official MCP server also available)",
+  "cost": "free (paid launch plans offered in submit flow)",
+  "requires_login": "yes",
+  "captcha": "none detected",
+  "review_time": "unknown; draft is published by the submitter",
+  "requirements": "Sign-in required. Product URL (details are prefilled from it), logo and screenshots, category, plan and launch week.",
+  "automation_score": 3,
+  "automation_notes": "Browser form is behind sign-in, so not a pure form POST. Ships an official MCP server (claude mcp add --transport http nicklaunches https://nicklaunches.com/api/mcp/, no API key, browser-approved connection) that lets an agent draft the listing from a URL; the human reviews and publishes. Agent-first path makes it a good fit for this tool even though the plain form needs a session.",
+  "status": "live"
  }
 ]
