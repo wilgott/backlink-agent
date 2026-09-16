@@ -18,6 +18,10 @@ exactly.
 5. Keep [docs/CHEATSHEET.md](CHEATSHEET.md) open as the pattern reference.
    Read [docs/PATTERNS.md](PATTERNS.md) only when the cheatsheet's one-liner
    is not enough.
+6. If a campaign-specific priority document exists, read it before choosing a
+   target. Use the configured `allowed_sites` order as the default queue, then
+   verify that the live directory still matches the recorded fit and backlink
+   assumptions.
 
 ## Operator Loop (the happy path)
 
@@ -53,6 +57,9 @@ Do NOT stop after step 2 (plan). Plan is preparation, not the deliverable.
 - **Always run `plan` before `submit`.** `python -m backlink_agent plan`
   prints the allowlist decision for every candidate site. Review it. Do not
   submit to any site that `plan` did not mark as allowed.
+- **Treat queue order as priority, not proof.** A site may move down or be
+  removed when its live page is dead, off-topic, nofollow-only, paid-only, or
+  otherwise materially different from the seed notes.
 - **Never modify the allowlist without explicit user consent.** Do not add
   sites to `allowed_sites`, lower `min_automation_score`, raise
   `max_submissions_per_run`, change `allowed_costs`, or add entries to

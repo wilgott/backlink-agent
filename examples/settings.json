@@ -7,7 +7,17 @@
   "allowlist": {
     "max_submissions_per_run": 10,
     "min_automation_score": 4,
-    "allowed_sites": ["Launching Next", "Startup Stash", "aitoolslist.io"],
+    "allowed_sites": [
+      "Fazier",
+      "Indie Hackers Products",
+      "Findly",
+      "OpenHunts",
+      "Aura++",
+      "The Hub",
+      "Firsto",
+      "PeerPush",
+      "Twelve Tools"
+    ],
     "blocked_sites": [],
     "allowed_costs": "free_only",
     "max_paid_usd": 0,

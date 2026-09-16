@@ -29,6 +29,13 @@ discovery.
 It does **not** do discovery, solve visual captchas, invent answers for form
 fields, or act outside the allowlist.
 
+## Campaign priorities
+
+`examples/settings.json` is ordered for the current Outpost16.com campaign.
+The rationale, live-fit checks, reciprocal-badge requirements, and explicit
+exclusions are recorded in [docs/PRIORITIES.md](docs/PRIORITIES.md). The order
+is a starting queue, not permission to skip the plan or submit every target.
+
 ## How it works (and what tokens are for)
 
 The intended operator is an AI agent, not a human clicking through forms:
