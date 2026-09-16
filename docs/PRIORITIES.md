@@ -40,6 +40,16 @@ flow is independently verified.
 - **Indie Hackers forum post** — Published at
   [After the pilot: help me sharpen Outpost16’s USP and moat](https://www.indiehackers.com/post/after-the-pilot-help-me-sharpen-outpost16-s-usp-and-moat-7d8e1301c5) as of 2026-09-16.
 
+## Current run notes
+
+- **Findly** — Submission form prepared for Outpost16 with the Analytics
+  category and free plan, but not submitted. The required logo upload is
+  still pending because the current Chrome session cannot attach the local
+  file; resume at [findly.tools/submit](https://findly.tools/submit).
+- **OpenHunts** — GitHub sign-in succeeded and the Outpost16 project form was
+  auto-filled, but it was not submitted; resume at
+  [openhunts.com/projects/submit](https://openhunts.com/projects/submit).
+
 ## Submission truthfulness
 
 The landing page's `Featured On` section contains only reciprocal-badge
