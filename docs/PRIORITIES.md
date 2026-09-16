@@ -31,6 +31,11 @@ free-path availability, topical fit, and automation effort.
 Do not add either domain to `allowed_sites` until a live, relevant submission
 flow is independently verified.
 
+## Confirmed listings
+
+- **Twelve Tools** — Outpost16 is live at
+  [twelve.tools/outpost16](https://twelve.tools/outpost16) as of 2026-09-16.
+
 ## Submission truthfulness
 
 The landing page's `Featured On` section contains only reciprocal-badge
