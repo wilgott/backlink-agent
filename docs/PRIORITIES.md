@@ -13,7 +13,7 @@ free-path availability, topical fit, and automation effort.
 | Order | Directory | Why it is here | Guardrail |
 | ---: | --- | --- | --- |
 | 1 | Fazier | Highest reported authority in the screenshot; dofollow free path | Free path requires a reciprocal homepage/footer badge; paid checkout is optional and must not be entered without approval |
-| 2 | Indie Hackers Products | High-authority founder audience and free product page | Link type and current submission flow need live verification |
+| 2 | Indie Hackers Products | High-authority founder audience and free product page | Product page is live; forum post is a separate optional outreach step |
 | 3 | Findly | High reported authority and a product listing page | Free link may be nofollow; account and Turnstile are required |
 | 4 | OpenHunts | Ahrefs-verified DR 67, dofollow, free, and an existing adapter | OAuth-only; deselect the preselected premium tier |
 | 5 | Aura++ | Strong reported authority and a verified public product link | Free dofollow depends on the daily top-three or reciprocal badge; guaranteed dofollow is paid |
@@ -35,6 +35,10 @@ flow is independently verified.
 
 - **Twelve Tools** — Outpost16 is live at
   [twelve.tools/outpost16](https://twelve.tools/outpost16) as of 2026-09-16.
+- **Indie Hackers** — Outpost16.com is live at
+  [indiehackers.com/product/outpost16-com](https://www.indiehackers.com/product/outpost16-com) as of 2026-09-16.
+- **Indie Hackers forum post** — Published at
+  [After the pilot: help me sharpen Outpost16’s USP and moat](https://www.indiehackers.com/post/after-the-pilot-help-me-sharpen-outpost16-s-usp-and-moat-7d8e1301c5) as of 2026-09-16.
 
 ## Submission truthfulness
 
