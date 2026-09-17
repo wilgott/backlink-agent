@@ -15,21 +15,23 @@ free-path availability, topical fit, and automation effort.
 | 1 | Fazier | Highest reported authority in the screenshot; dofollow free path | Free path requires a reciprocal homepage/footer badge; paid checkout is optional and must not be entered without approval |
 | 2 | Indie Hackers Products | High-authority founder audience and free product page | Product page is live; forum post is a separate optional outreach step |
 | 3 | Findly | High reported authority and a product listing page | Free link may be nofollow; account and Turnstile are required |
-| 4 | OpenHunts | Ahrefs-verified DR 67, dofollow, free, and an existing adapter | OAuth-only; deselect the preselected premium tier |
-| 5 | Aura++ | Strong reported authority and a verified public product link | Free dofollow depends on the daily top-three or reciprocal badge; guaranteed dofollow is paid |
-| 6 | The Hub | Dofollow Nordic startup profile with especially good Norway fit | Google/LinkedIn OAuth and company organization number required |
-| 7 | Firsto | Relevant launch platform with a mixed link profile | Free queue is roughly 180 days; badge is required for the free dofollow path |
-| 8 | PeerPush | Dofollow product page and free queue | Turnstile and passwordless account flow; decline paid upgrades |
-| 9 | Twelve Tools | Public no-login flow and dofollow listing | Free path requires a reciprocal backlink; its score is 3, so the default score-4 gate intentionally blocks it until reviewed |
+| 4 | OpenHunts | Ahrefs-verified DR 67, dofollow, free, and an existing adapter | Free queue was full through the weeks shown in the current form; the next Monday launch was paid |
+| 5 | Aura++ | Strong reported authority and a verified public product link | Separate GitHub OAuth is required; guaranteed dofollow is paid |
+| 6 | The Hub | Dofollow Nordic startup profile with especially good Norway fit | Separate account/profile flow is required |
+| 7 | Firsto | Relevant launch platform with a mixed link profile | Separate account login is required before the free queue can be reached |
+| 8 | PeerPush | Dofollow product page and free queue | Free queue is available; decline paid upgrades |
+| 9 | LaunchLlama | Screenshot target with an existing public product directory | Free account is already at its one-tool limit; adding Outpost16 requires a paid upgrade |
+| 10 | Smol Launch | Screenshot target with a public weekly launch platform | Free launch is available after separate account sign-in; do not choose paid promotion |
+| 11 | Twelve Tools | Public no-login flow and dofollow listing | Free path requires a reciprocal backlink; its score is 3, so the default score-4 gate intentionally blocks it until reviewed |
 
 ## Explicit exclusions from the screenshot
 
-- **SmallLaunch** — the screenshot URL currently resolves to a GoDaddy domain
-  sale page, not a directory.
-- **LaunchMala** — the screenshot URL currently has no DNS resolution.
+- **SmallLaunch** — the similarly named `smalllaunch.com` domain resolves to a
+  GoDaddy sale page, not a directory. This is distinct from the screenshot's
+  live `smollaunch.com` target, which is listed above.
 
-Do not add either domain to `allowed_sites` until a live, relevant submission
-flow is independently verified.
+Do not add `smalllaunch.com` to `allowed_sites`; the screenshot's distinct
+`smollaunch.com` target has a live submission flow and is tracked above.
 
 ## Confirmed listings
 
@@ -42,13 +44,24 @@ flow is independently verified.
 
 ## Current run notes
 
-- **Findly** — Submission form prepared for Outpost16 with the Analytics
-  category and free plan, but not submitted. The required logo upload is
-  still pending because the current Chrome session cannot attach the local
-  file; resume at [findly.tools/submit](https://findly.tools/submit).
-- **OpenHunts** — GitHub sign-in succeeded and the Outpost16 project form was
-  auto-filled, but it was not submitted; resume at
+- **Findly** — Form and profile details were prepared with the free plan and
+  the user-provided logo/screenshot. Verification was blocked because Findly's
+  crawler still saw a cached pre-footer page; leave the open listing tab for a
+  later retry at [findly.tools/submit](https://findly.tools/submit).
+- **OpenHunts** — Outpost16 form was auto-filled with the free option selected,
+  but every displayed free launch week was full; the paid next-Monday option
+  was intentionally not selected. Leave the open form at
   [openhunts.com/projects/submit](https://openhunts.com/projects/submit).
+- **PeerPush** — Outpost16 joined the free queue at [peerpush.com/p/outpost16](https://peerpush.com/p/outpost16)
+  on 2026-09-17, queue position #3129, with an estimated wait of about 1
+  month and 23 days. The listing is permanent once published; paid launch and
+  promotion were declined.
+- **Aura++** — Submission reached a separate GitHub OAuth authorization screen;
+  no authorization was granted.
+- **The Hub**, **Firsto**, and **Smol Launch** — Submission flows require a
+  separate account sign-in/creation; no account action was taken.
+- **LaunchLlama** — Public submission flow reported that the free account's
+  one-tool listing limit was already used; paid upgrade was declined.
 
 ## Submission truthfulness
 
