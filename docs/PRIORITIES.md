@@ -38,10 +38,10 @@ whether the submission can be completed without paid promotion.
 | 15 | Oslo Startup Ecosystem (Dealroom) | DR 77 verified for dealroom.co and direct Oslo relevance | Requires account and analyst review; use the same Wilgott AS identity and no paid upgrades |
 | 16 | StartupBlink | Estimated DR 73, free startup profile | Turnstile/account may require user handoff; do not solve CAPTCHA |
 | 17 | Tracxn | High-authority startup database with a public free analyst-review intake | Submitted 2026-09-20; analyst review pending; no paid path selected |
-| 18 | StartupTracker.io | Free startup search engine with a public company-profile flow | Prepared through founder/company steps; official Twitter handle is required and remains open for handoff |
+| 18 | StartupTracker.io | Free startup search engine with a public company-profile flow | Market form prepared; generic required-field validation still blocks submission, so leave open for handoff and do not invent funding data |
 | 19 | Launching Next | Established startup directory with an explicit free submission path | Prepared through the free form; stop at the site's math check rather than solving it automatically |
-| 20 | Uneed | Relevant launchpad with a free queue and strong analytics/product taxonomy | Product preview completed; account is required to save/schedule; leave open for user action |
-| 21 | Super Launch | Relevant SaaS/product directory with a free review path | Free form prepared; required logo upload is pending because browser file picker is unavailable |
+| 20 | Uneed | Relevant launchpad with a free queue and strong analytics/product taxonomy | Outpost16 is queued on the free plan; the other three products are blocked by the one-product free-plan limit; do not upgrade |
+| 21 | Super Launch | Relevant SaaS/product directory with a free review path | Free form is prepared, but the verifier still rejects the live reciprocal badge; leave open for handoff and do not pay |
 | 22 | AIChief | AI-focused directory with an explicit $0 tier and lifetime dofollow listing | Submitted 2026-09-20 to the free editorial queue; estimated review is about 30 days; paid fast-track declined |
 | 23 | AI Tools List | Public AI-tool intake with a free editorial path | Submitted 2026-09-20; publication is editorial and not yet confirmed |
 | 24 | Future Tools | Established AI directory with a public free editorial form | Submitted 2026-09-20; confirmation says Matt will review it; newsletter opt-in left unchecked |
@@ -96,17 +96,25 @@ Do not add `smalllaunch.com` to `allowed_sites`; the screenshot's distinct
   reference `8K4JBQCpPZn0aHuaTz8I`; human review pending.
 - **Tracxn** — Free public analyst-review request submitted 2026-09-20;
   confirmation says the team will review it and respond.
-- **StartupTracker.io** — Profile prepared through the founder/company steps;
-  the form requires a verified official Outpost16 Twitter handle, so the tab
-  is left open for handoff.
+- **StartupTracker.io** — The market form is populated with B2B, Web App,
+  Analytics, Marketing, Software Dev, Startups, Freemium, Subscription, and
+  Free to Use selections. The page still returns a generic required-field
+  validation error; no funding amount was invented and the tab is left open
+  for handoff.
 - **Launching Next** — Free submission form prepared through the site's quick
   check; the remaining math check is intentionally not solved automatically.
-- **Uneed** — Outpost16 preview completed; the free flow now requires an
-  account to save and schedule the launch. No account or paid upgrade was
-  selected.
+- **Uneed** — Outpost16 was saved to the free waiting line as entry `53723`;
+  the current estimated free launch date is 2027-02-13. The queue requires an
+  upvote score of 10 to stay published and 20 to retain the dofollow link.
+  Klinky (`https://klinky.io`), PixelWatch (`https://pixelwatch.app`), and AI
+  Asset Vault (`https://vault.wilgott.com`) are blocked by the free plan's
+  one-product queue limit; the paid Pro upgrade was not selected.
 - **Super Launch** — Free plan selected and product details, Analytics/Web
-  categories, Web platform, and 2022 founding year prepared. Required logo
-  upload remains open for handoff; no paid plan was selected.
+  categories, Web platform, 2022 founding year, logo, and screenshots are
+  prepared. The live Outpost16 page now contains Super Launch's exact official
+  light-badge embed in the bottom `Featured On` section, but Super Launch's
+  verifier still reports that it cannot find the dofollow backlink. The tab is
+  left open for handoff; no paid plan was selected.
 - **AIChief** — Free Outpost16 submission completed 2026-09-20. The site
   confirmed the tool is in its free editorial queue with an estimated review
   time of about 30 days; the $9 fast-track upsell was not selected.
@@ -119,6 +127,9 @@ Do not add `smalllaunch.com` to `allowed_sites`; the screenshot's distinct
 - **Insidr.ai** — Free public submission completed 2026-09-20 with Outpost16's
   AI-powered growth/analytics description and website link. The form confirmed
   “Your submission was successful”; directory approval is pending.
+- **Most Popular AI Tools** — Login is available, but the live submission page
+  is explicitly payment-only ($10 minimum). It was intentionally skipped under
+  the campaign's free-only rule; no paid plan was selected.
 
 ## Submission truthfulness
 
