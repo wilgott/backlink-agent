@@ -24,6 +24,29 @@ free-path availability, topical fit, and automation effort.
 | 10 | Smol Launch | Screenshot target with a public weekly launch platform | Free launch is available after separate account sign-in; do not choose paid promotion |
 | 11 | Twelve Tools | Public no-login flow and dofollow listing | Free path requires a reciprocal backlink; its score is 3, so the default score-4 gate intentionally blocks it until reviewed |
 
+## Next free-only batch after the screenshot queue
+
+These are deliberately below the 11 directories from the user's screenshot.
+They are ordered by estimated authority, free-path viability, Norway fit, and
+whether the submission can be completed without paid promotion.
+
+| Order | Directory | Why it is next | Guardrail |
+| ---: | --- | --- | --- |
+| 12 | EU-Startups | Estimated DR 75, free permanent listing, Norway category, one-image listing | Submitted 2026-09-20; admin approval pending |
+| 13 | SaaSHub | Estimated DR ~78, free organic listing, strong competitor discovery value | Current public form loops back to the intake page; account/session likely required. Never select Priority+ or any paid feature |
+| 14 | Dealroom / Norway Tech Ecosystem | Estimated DR ~75, free company profile, strong Nordic relevance | Requires account; use Wilgott AS org.nr. 828753762 and stop for Google/LinkedIn authorization if requested |
+| 15 | Oslo Startup Ecosystem (Dealroom) | DR 77 verified for dealroom.co and direct Oslo relevance | Requires account and analyst review; use the same Wilgott AS identity and no paid upgrades |
+| 16 | StartupBlink | Estimated DR 73, free startup profile | Turnstile/account may require user handoff; do not solve CAPTCHA |
+| 17 | Tracxn | High-authority startup database with a public free analyst-review intake | Submitted 2026-09-20; analyst review pending; no paid path selected |
+| 18 | StartupTracker.io | Free startup search engine with a public company-profile flow | Prepared through founder/company steps; official Twitter handle is required and remains open for handoff |
+| 19 | Launching Next | Established startup directory with an explicit free submission path | Prepared through the free form; stop at the site's math check rather than solving it automatically |
+| 20 | Uneed | Relevant launchpad with a free queue and strong analytics/product taxonomy | Product preview completed; account is required to save/schedule; leave open for user action |
+| 21 | Super Launch | Relevant SaaS/product directory with a free review path | Free form prepared; required logo upload is pending because browser file picker is unavailable |
+| 22 | AIChief | AI-focused directory with an explicit $0 tier and lifetime dofollow listing | Submitted 2026-09-20 to the free editorial queue; estimated review is about 30 days; paid fast-track declined |
+| 23 | AI Tools List | Public AI-tool intake with a free editorial path | Submitted 2026-09-20; publication is editorial and not yet confirmed |
+| 24 | Future Tools | Established AI directory with a public free editorial form | Submitted 2026-09-20; confirmation says Matt will review it; newsletter opt-in left unchecked |
+| 25 | Insidr.ai | Free public AI-tools intake with a potential dofollow listing | Submitted 2026-09-20; page confirmed “Your submission was successful”; approval is pending |
+
 ## Explicit exclusions from the screenshot
 
 - **SmallLaunch** — the similarly named `smalllaunch.com` domain resolves to a
@@ -62,6 +85,40 @@ Do not add `smalllaunch.com` to `allowed_sites`; the screenshot's distinct
   separate account sign-in/creation; no account action was taken.
 - **LaunchLlama** — Public submission flow reported that the free account's
   one-tool listing limit was already used; paid upgrade was declined.
+- **EU-Startups** — Free Outpost16 listing submitted 2026-09-20 under the
+  Norway category with Wilgott AS details; the site confirmed receipt and said
+  admin approval is pending. The Outpost16 lookout logo was attached.
+- **SaaSHub** — The free submission was prepared, but the public form returned
+  to its intake screen instead of opening the product-details form. The open
+  tab is preserved for a retry after account/session access is available; no
+  paid Priority+ option was selected and no payment was made.
+- **Europe Startup Guide** — Free Outpost16 suggestion submitted 2026-09-20;
+  reference `8K4JBQCpPZn0aHuaTz8I`; human review pending.
+- **Tracxn** — Free public analyst-review request submitted 2026-09-20;
+  confirmation says the team will review it and respond.
+- **StartupTracker.io** — Profile prepared through the founder/company steps;
+  the form requires a verified official Outpost16 Twitter handle, so the tab
+  is left open for handoff.
+- **Launching Next** — Free submission form prepared through the site's quick
+  check; the remaining math check is intentionally not solved automatically.
+- **Uneed** — Outpost16 preview completed; the free flow now requires an
+  account to save and schedule the launch. No account or paid upgrade was
+  selected.
+- **Super Launch** — Free plan selected and product details, Analytics/Web
+  categories, Web platform, and 2022 founding year prepared. Required logo
+  upload remains open for handoff; no paid plan was selected.
+- **AIChief** — Free Outpost16 submission completed 2026-09-20. The site
+  confirmed the tool is in its free editorial queue with an estimated review
+  time of about 30 days; the $9 fast-track upsell was not selected.
+- **AI Tools List** — Public Tally submission completed 2026-09-20 with a
+  truthful AI-powered growth/analytics description. The form confirmed
+  completion; publication remains subject to editorial acceptance.
+- **Future Tools** — Free public submission completed 2026-09-20 in the
+  Marketing category. The site confirmed receipt and editorial review; the
+  optional newsletter subscription was left unchecked.
+- **Insidr.ai** — Free public submission completed 2026-09-20 with Outpost16's
+  AI-powered growth/analytics description and website link. The form confirmed
+  “Your submission was successful”; directory approval is pending.
 
 ## Submission truthfulness
 
