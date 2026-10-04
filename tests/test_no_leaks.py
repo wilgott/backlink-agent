@@ -5,7 +5,7 @@ import pathlib
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCAN_SUFFIXES = {".py", ".js", ".md", ".json", ".csv", ".html", ".toml", ".txt"}
 SKIP_DIRS = {".git", ".venv", "node_modules", "__pycache__", ".pytest_cache"}
-FORBIDDEN = ["klinky", "/users/robin", ".work/", "credentials.md", "828753762", "gmail_body"]
+FORBIDDEN = [".work/", "credentials.md", "gmail_body", "private-backlink-ops"]
 
 
 def _files():

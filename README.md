@@ -41,23 +41,17 @@ fields, or act outside the allowlist.
 
 ## Campaign priorities
 
-`examples/settings.json` is ordered for the current Outpost16.com campaign.
-The rationale, live-fit checks, reciprocal-badge requirements, and explicit
-exclusions are recorded in [docs/PRIORITIES.md](docs/PRIORITIES.md). The order
-is a starting queue, not permission to skip the plan or submit every target.
+`examples/settings.json` demonstrates an ordered allowlist for a hypothetical
+campaign. Copy it to a private working directory and customize the order,
+product facts, and submission decisions for your own campaign. Private campaign
+priorities and credentials are intentionally not committed to this public repo.
 
-## Portfolio backlink tracking
+## Private campaign data
 
-The multi-product registry lives in [`data/portfolio.json`](data/portfolio.json)
-and the generated human-readable overview is
-[`docs/PORTFOLIO.md`](docs/PORTFOLIO.md). It covers the Wilgott Ventures
-portfolio plus NotaryHub, separates confirmed public listings from queued or
-pending submissions, and keeps an explicit **not registered yet** list for
-every product. After changing the registry, rebuild the overview with:
-
-```bash
-python scripts/build-portfolio-overview.py
-```
+Product profiles, portfolio status, listing URLs, contact details, and campaign
+notes belong in a private operator workspace. This repository intentionally
+contains only reusable directory research, recipes, adapters, and generic
+examples.
 
 ## How it works (and what tokens are for)
 
@@ -80,11 +74,10 @@ The intended operator is an AI agent, not a human clicking through forms:
 
 ## Case study: what the seed data cost (and what you skip)
 
-This repo was built during a real campaign: a bootstrapped SaaS
-([klinky.io](https://klinky.io), an A/B-testing link shortener) ran it with
-an AI agent for 9 days in July–August 2026 — **80+ directories actioned, $0
-spent**, every outcome logged. The seed database, cheatsheet, and recipes
-are the distilled output of that run.
+This repo was distilled from real product-submission campaigns run with an AI
+agent — **80+ directories actioned, $0 spent**, with outcomes logged. The seed
+database, cheatsheet, and recipes capture the reusable findings without
+including any campaign's private product data.
 
 What producing that knowledge actually cost, measured from the campaign's
 own agent runs (per-agent token usage was recorded throughout):
