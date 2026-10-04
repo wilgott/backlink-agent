@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "last_reconciled": "2026-10-04",
+  "sources": {
+    "ventures_page": "https://wilgott.com/ventures",
+    "notaryhub_homepage": "https://notaryhub.io/",
+    "directory_queue": "docs/PRIORITIES.md"
+  },
+  "products": [
+    {
+      "id": "outpost16",
+      "name": "Outpost16",
+      "website": "https://outpost16.com",
+      "source": "ventures_page",
+      "description": "Growth signals from your products and marketing tools in one lookout."
+    },
+    {
+      "id": "birdly",
+      "name": "Birdly",
+      "website": "https://birdly.wilgott.com",
+      "source": "ventures_page",
+      "description": "Find the next great deal with your crew — share signals, compare margins, and move together before the opportunity disappears."
+    },
+    {
+      "id": "ai-asset-vault",
+      "name": "AI Asset Vault",
+      "website": "https://vault.wilgott.com",
+      "source": "ventures_page",
+      "description": "A shared durable vault for humans and cloud agents — hosted MCP, scoped tokens, and a calm operator console."
+    },
+    {
+      "id": "klinky",
+      "name": "Klinky",
+      "website": "https://klinky.io",
+      "source": "ventures_page",
+      "description": "Campaign links that split traffic and run A/B tests — short links with clearer control over where people go."
+    },
+    {
+      "id": "pixelwatch",
+      "name": "PixelWatch",
+      "website": "https://pixelwatch.app",
+      "source": "ventures_page",
+      "description": "Watch competitor pages for visual change — pricing, messaging, and landing-page shifts without manual checking."
+    },
+    {
+      "id": "notaryhub",
+      "name": "NotaryHub",
+      "website": "https://notaryhub.io",
+      "source": "notaryhub_homepage",
+      "description": "A practical way to start finding notary help in Texas."
+    }
+  ],
+  "directories": [
+    { "id": "fazier", "name": "Fazier", "url": "https://fazier.com" },
+    { "id": "indie-hackers", "name": "Indie Hackers", "url": "https://www.indiehackers.com/products" },
+    { "id": "findly", "name": "Findly.tools", "url": "https://findly.tools" },
+    { "id": "openhunts", "name": "OpenHunts", "url": "https://openhunts.com" },
+    { "id": "aura-plus-plus", "name": "Aura++", "url": "https://auraplusplus.com" },
+    { "id": "the-hub", "name": "The Hub", "url": "https://thehub.io" },
+    { "id": "firsto", "name": "Firsto", "url": "https://firsto.co" },
+    { "id": "peerpush", "name": "PeerPush", "url": "https://peerpush.com" },
+    { "id": "launchllama", "name": "LaunchLlama", "url": "https://launchllama.co" },
+    { "id": "smol-launch", "name": "Smol Launch", "url": "https://smollaunch.com" },
+    { "id": "twelve-tools", "name": "Twelve Tools", "url": "https://twelve.tools" },
+    { "id": "eu-startups", "name": "EU-Startups", "url": "https://www.eu-startups.com" },
+    { "id": "saashub", "name": "SaaSHub", "url": "https://www.saashub.com" },
+    { "id": "dealroom-norway", "name": "Dealroom / Norway Tech Ecosystem", "url": "https://app.dealroom.co" },
+    { "id": "oslo-startup-ecosystem", "name": "Oslo Startup Ecosystem", "url": "https://app.dealroom.co" },
+    { "id": "startupblink", "name": "StartupBlink", "url": "https://www.startupblink.com" },
+    { "id": "tracxn", "name": "Tracxn", "url": "https://tracxn.com" },
+    { "id": "startuptracker", "name": "StartupTracker.io", "url": "https://startuptracker.io" },
+    { "id": "launching-next", "name": "Launching Next", "url": "https://www.launchingnext.com" },
+    { "id": "uneed", "name": "Uneed", "url": "https://www.uneed.best" },
+    { "id": "super-launch", "name": "Super Launch", "url": "https://super-launch.app" },
+    { "id": "aichief", "name": "AIChief", "url": "https://aichief.com" },
+    { "id": "ai-tools-list", "name": "AI Tools List", "url": "https://aitoolslist.io" },
+    { "id": "future-tools", "name": "Future Tools", "url": "https://www.futuretools.io" },
+    { "id": "insidr-ai", "name": "Insidr.ai", "url": "https://www.insidr.ai" },
+    { "id": "europe-startup-guide", "name": "Europe Startup Guide", "url": "https://www.europestartupguide.com" },
+    { "id": "most-popular-ai-tools", "name": "Most Popular AI Tools", "url": "https://mostpopularaitools.com" }
+  ],
+  "records": [
+    {
+      "product_id": "outpost16",
+      "directory_id": "twelve-tools",
+      "status": "confirmed",
+      "listing_url": "https://twelve.tools/outpost16",
+      "last_checked": "2026-09-20",
+      "notes": "Public product page verified."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "indie-hackers",
+      "status": "confirmed",
+      "listing_url": "https://www.indiehackers.com/product/outpost16-com",
+      "last_checked": "2026-09-20",
+      "notes": "Product page is live; the forum post is tracked separately in PRIORITIES.md."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "peerpush",
+      "status": "queued",
+      "listing_url": "https://peerpush.com/p/outpost16",
+      "last_checked": "2026-09-20",
+      "notes": "Free queue, position #3129; not yet a live backlink."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "uneed",
+      "status": "queued",
+      "listing_url": "https://www.uneed.best/edit/waiting-line/53723",
+      "last_checked": "2026-09-20",
+      "notes": "Free waiting line; estimated launch 2027-02-13."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "eu-startups",
+      "status": "submitted_pending",
+      "last_checked": "2026-09-20",
+      "notes": "Free listing submitted; admin approval pending."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "europe-startup-guide",
+      "status": "submitted_pending",
+      "last_checked": "2026-09-20",
+      "notes": "Free suggestion submitted; human review pending."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "tracxn",
+      "status": "submitted_pending",
+      "last_checked": "2026-09-20",
+      "notes": "Free analyst-review request submitted."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "aichief",
+      "status": "submitted_pending",
+      "last_checked": "2026-09-20",
+      "notes": "Free editorial queue; estimated review about 30 days."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "ai-tools-list",
+      "status": "submitted_pending",
+      "last_checked": "2026-09-20",
+      "notes": "Tally submission confirmed; editorial publication pending."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "future-tools",
+      "status": "submitted_pending",
+      "last_checked": "2026-09-20",
+      "notes": "Submission received; editorial review pending."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "insidr-ai",
+      "status": "submitted_pending",
+      "last_checked": "2026-09-20",
+      "notes": "Submission successful; approval pending."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "findly",
+      "status": "prepared_blocked",
+      "last_checked": "2026-09-20",
+      "notes": "Reciprocal-link verification was blocked by a stale crawler result."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "openhunts",
+      "status": "prepared_blocked",
+      "last_checked": "2026-09-20",
+      "notes": "Free launch weeks were full; the next available paid option was not selected."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "saashub",
+      "status": "prepared_blocked",
+      "last_checked": "2026-09-20",
+      "notes": "Public form returned to intake instead of opening the product form."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "launching-next",
+      "status": "prepared_blocked",
+      "last_checked": "2026-09-20",
+      "notes": "Stopped at the site's math check; no automated CAPTCHA or challenge solving."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "startuptracker",
+      "status": "prepared_blocked",
+      "last_checked": "2026-09-20",
+      "notes": "Market form populated, but generic required-field validation still blocks submission."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "super-launch",
+      "status": "prepared_blocked",
+      "last_checked": "2026-09-20",
+      "notes": "Free form prepared; live reciprocal badge is present, but the verifier still rejects it."
+    },
+    {
+      "product_id": "outpost16",
+      "directory_id": "most-popular-ai-tools",
+      "status": "skipped_paid",
+      "last_checked": "2026-09-20",
+      "notes": "Submission page is payment-only; skipped under the free-only campaign rule."
+    }
+  ]
+}
