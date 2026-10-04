@@ -2142,5 +2142,21 @@
   "automation_score": 1,
   "automation_notes": "DISQUALIFIED: official policy provides no backlinks; product page not indexed until >=1 review. Also gated by LinkedIn company page (>=10 employees), >=100 customers, non-role-based work email.",
   "status": "disqualified"
+ },
+ {
+  "name": "LaunchOnIt",
+  "url": "https://launchon.it/submit",
+  "category": "launch_platform",
+  "dr_estimate": "unknown",
+  "link_type": "mixed",
+  "submission_method": "form (official MCP server also available)",
+  "cost": "freemium (Free $0 weekly queue; Launch $19 skips the queue with a dofollow link; Growth $39 adds a review article)",
+  "requires_login": "yes (Google OAuth, GitHub OAuth, email magic link or email/password)",
+  "captcha": "Cloudflare Turnstile",
+  "review_time": "weekly launches Monday 00:00 UTC, 7 days on the front page; 20 free slots per week so the free queue can be weeks out; submissions moderated",
+  "requirements": "Product URL (details can be filled from it), name, tagline (10-50 chars), description, logo, category, pricing, launch week. Free tier: nofollow by default, dofollow after embedding the LaunchOnIt badge or finishing in the weekly top 3.",
+  "automation_score": 3,
+  "automation_notes": "Browser form is behind sign-in and Turnstile, so not a pure form POST. Ships an official MCP server (claude mcp add --transport http launchonit https://launchon.it/api/mcp, no API key) whose submit_product tool drafts the listing from a URL and returns a private review link; the human signs in, edits and publishes. Agent-first path fits this tool even though the plain form needs a session.",
+  "status": "live"
  }
 ]
