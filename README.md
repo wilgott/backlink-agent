@@ -13,6 +13,16 @@ It ships with a curated seed database of 134 directories, each scored for
 automation feasibility, so you start from qualified targets instead of
 discovery.
 
+TinyLaunch catalog reconciliation is tracked separately in
+[`data/tinylaunch-catalog.json`](data/tinylaunch-catalog.json) and
+[`docs/TINYLAUNCH-RECONCILIATION.md`](docs/TINYLAUNCH-RECONCILIATION.md). The
+snapshot identifies overlaps and new candidates without promoting a paid
+catalog into the qualified database. Regenerate the report with:
+
+```bash
+python scripts/reconcile-tinylaunch.py
+```
+
 ## What it does
 
 - Loads a seed database of 134 directories (URL, submission method, cost,

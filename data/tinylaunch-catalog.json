@@ -1,0 +1,1033 @@
+{
+  "source_url": "https://www.tinylaunch.com/submission-service",
+  "captured_on": "2026-10-04",
+  "catalog_claim": 691,
+  "premium_selection_claim": 110,
+  "observed_rows": 128,
+  "sites": [
+    {
+      "name": "Source Forge",
+      "url": "https://sourceforge.net/",
+      "submit_url": "https://sourceforge.net/software/vendors",
+      "dr": 92,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Crunchbase",
+      "url": "https://www.crunchbase.com/",
+      "submit_url": "https://www.crunchbase.com/add-new",
+      "dr": 91,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Etherscan",
+      "url": "https://etherscan.io/directory",
+      "submit_url": "https://forms.blockscan.com/form/tgwKo0vzbd93evhgr5fjXfQvRONa0OwShDESZy-2PNk",
+      "dr": 90,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "GeekWire",
+      "url": "https://www.geekwire.com/",
+      "submit_url": "https://www.geekwire.com/submit-startup",
+      "dr": 86,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "AppSumo",
+      "url": "https://appsumo.com/",
+      "submit_url": "https://appsumo.com/partner-apply/?srsltid=AfmBOoqFVB4fFDtHRKl2HeD9i4NDdnf7UZTMoFgkJLJDiSOmqILEnU_E",
+      "dr": 84,
+      "link_type": "Dofollow",
+      "type": "Marketplace"
+    },
+    {
+      "name": "HotFrog",
+      "url": "https://www.hotfrog.com/",
+      "submit_url": "https://www.hotfrog.com/add",
+      "dr": 80,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Alternativeto",
+      "url": "https://alternativeto.net/",
+      "submit_url": "https://alternativeto.net/manage-item",
+      "dr": 79,
+      "link_type": "Nofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "EU Startups",
+      "url": "https://www.eu-startups.com/",
+      "submit_url": "https://www.eu-startups.com/directory/?wpbdp_view=submit_listing",
+      "dr": 77,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Startup Fame",
+      "url": "https://startupfa.me/",
+      "submit_url": "https://startupfa.me/dashboard",
+      "dr": 77,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "ActiveSearchResult",
+      "url": "https://www.activesearchresults.com/",
+      "submit_url": "https://www.activesearchresults.com/addwebsite.php",
+      "dr": 74,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "SaaSHub",
+      "url": "https://www.saashub.com/",
+      "submit_url": "https://www.saashub.com/services/submit",
+      "dr": 74,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "SaaS Worthy",
+      "url": "https://www.saasworthy.com/",
+      "submit_url": null,
+      "dr": 73,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "LandBook",
+      "url": "https://land-book.com/",
+      "submit_url": "https://land-book.com/websites/new",
+      "dr": 72,
+      "link_type": "Dofollow",
+      "type": "Showcase"
+    },
+    {
+      "name": "Site Like",
+      "url": "https://www.sitelike.org/",
+      "submit_url": "https://www.sitelike.org/add-site",
+      "dr": 71,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Side Projectors",
+      "url": "https://www.sideprojectors.com/",
+      "submit_url": "https://www.sideprojectors.com/submit/45841",
+      "dr": 70,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "AIToolly",
+      "url": "https://aitoolly.com/",
+      "submit_url": "https://aitoolly.com/submit",
+      "dr": 69,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "futuretools",
+      "url": "https://www.futuretools.io/",
+      "submit_url": "https://www.futuretools.io/submit-a-tool",
+      "dr": 68,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "ToolsFine.com",
+      "url": "https://toolsfine.com/",
+      "submit_url": "https://tally.so/r/wvB7Xg",
+      "dr": 65,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "PitchWall",
+      "url": "https://pitchwall.co/",
+      "submit_url": "https://pitchwall.co/product/submit",
+      "dr": 64,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "StartupRanking",
+      "url": "https://www.startupranking.com/",
+      "submit_url": "https://www.startupranking.com/startup/create/url-validation",
+      "dr": 63,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "SubmissionWebDirectory",
+      "url": "https://www.submissionwebdirectory.com/",
+      "submit_url": "https://www.submissionwebdirectory.com/submit.php",
+      "dr": 61,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Today Launches",
+      "url": "https://todaylaunches.com/",
+      "submit_url": null,
+      "dr": 60,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Site Web Directory",
+      "url": "https://www.siteswebdirectory.com/",
+      "submit_url": "https://www.siteswebdirectory.com/submit.php",
+      "dr": 59,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Fristo",
+      "url": "https://firsto.co/",
+      "submit_url": null,
+      "dr": 58,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Saas AI Tools",
+      "url": "https://saasaitools.com/",
+      "submit_url": "https://saasaitools.com/select-listing-type",
+      "dr": 56,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Open Lunch",
+      "url": "https://open-launch.com/",
+      "submit_url": null,
+      "dr": 55,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Rootdata",
+      "url": "https://www.rootdata.com/",
+      "submit_url": "https://www.rootdata.com/Projects/submit",
+      "dr": 54,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "BAI.tools",
+      "url": "https://bai.tools/",
+      "submit_url": "https://bai.tools/submit-ai-tools",
+      "dr": 53,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "HuntScreens.com",
+      "url": "https://huntscreens.com/en",
+      "submit_url": null,
+      "dr": 53,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Curated",
+      "url": "https://www.curated.design/",
+      "submit_url": "https://www.curated.design/",
+      "dr": 52,
+      "link_type": "Dofollow",
+      "type": "Community"
+    },
+    {
+      "name": "New SaaSly",
+      "url": "https://newsaasly.com/",
+      "submit_url": null,
+      "dr": 52,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "BensBites",
+      "url": "https://news.bensbites.com/",
+      "submit_url": "https://news.bensbites.com/submit",
+      "dr": 51,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Launching Next",
+      "url": "https://www.launchingnext.com/",
+      "submit_url": "https://www.launchingnext.com/submit",
+      "dr": 50,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Business Software",
+      "url": "https://www.business-software.com/",
+      "submit_url": "https://www.business-software.com/add-your-product",
+      "dr": 49,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "FiveTaco",
+      "url": "https://fivetaco.com/",
+      "submit_url": "https://fivetaco.com/submit",
+      "dr": 47,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Promote Project",
+      "url": "https://www.promoteproject.com/",
+      "submit_url": "https://www.promoteproject.com/submit-startup",
+      "dr": 47,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Huzzler",
+      "url": "https://huzzler.so/",
+      "submit_url": null,
+      "dr": 46,
+      "link_type": "Nofollow",
+      "type": "Community"
+    },
+    {
+      "name": "Site promotion directory",
+      "url": "https://www.sitepromotiondirectory.com/",
+      "submit_url": "https://www.sitepromotiondirectory.com/submit.php",
+      "dr": 46,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "AI Startups",
+      "url": "https://marsx.dev/ai-startups",
+      "submit_url": null,
+      "dr": 45,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Makerthrive",
+      "url": "https://makerthrive.com/",
+      "submit_url": null,
+      "dr": 45,
+      "link_type": "Dofollow",
+      "type": "Community"
+    },
+    {
+      "name": "StartupTracker",
+      "url": "https://startuptracker.io/",
+      "submit_url": "https://startuptracker.io/crowdsourcing",
+      "dr": 44,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "BusinessHunt",
+      "url": "https://businesshunt.co/",
+      "submit_url": null,
+      "dr": 43,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "ScriptByAI",
+      "url": "https://www.scriptbyai.com/",
+      "submit_url": "https://www.scriptbyai.com/submit-resources",
+      "dr": 42,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Startup Buffer",
+      "url": "https://startupbuffer.com/",
+      "submit_url": "https://startupbuffer.com/site/submit",
+      "dr": 41,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Directory LDM studi",
+      "url": "https://www.directory.ldmstudio.com/",
+      "submit_url": null,
+      "dr": 40,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "The Rundown Tools",
+      "url": "https://www.rundown.ai/tools",
+      "submit_url": "https://www.rundown.ai/submit",
+      "dr": 40,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Quality Internet Directory",
+      "url": "https://www.qualityinternetdirectory.com/",
+      "submit_url": null,
+      "dr": 39,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "AI NavHub",
+      "url": "https://ainavhub.com/",
+      "submit_url": "https://ainavhub.com/submit",
+      "dr": 38,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Techendo.com",
+      "url": "https://techendo.com/",
+      "submit_url": "https://techendo.com/software/add",
+      "dr": 38,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "OpenFuture",
+      "url": "https://openfuture.ai/",
+      "submit_url": "https://openfuture.ai/submit-tool",
+      "dr": 35,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "WhatTheAI",
+      "url": "https://whattheai.tech/",
+      "submit_url": "https://whattheai.tech/submit",
+      "dr": 35,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Dev Suite",
+      "url": "https://devsuite.co/",
+      "submit_url": "https://devsuite.co/submit",
+      "dr": 34,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "10words",
+      "url": "https://10words.io/",
+      "submit_url": "https://portal.10words.io/submissions/submit",
+      "dr": 33,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "AlphaDigits",
+      "url": "https://alphadigits.com/",
+      "submit_url": null,
+      "dr": 32,
+      "link_type": "Dofollow",
+      "type": "App Directory"
+    },
+    {
+      "name": "ProofStories",
+      "url": "https://proofstories.io/",
+      "submit_url": null,
+      "dr": 32,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "What Lunched Today",
+      "url": "https://www.whatlaunched.today/",
+      "submit_url": null,
+      "dr": 32,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "ToolAI",
+      "url": "https://toolai.io/",
+      "submit_url": null,
+      "dr": 31,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "LLM Relevance",
+      "url": "https://www.llmrelevance.com/",
+      "submit_url": null,
+      "dr": 30,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Awseomeindie",
+      "url": "https://awesomeindie.com/",
+      "submit_url": "https://awesomeindie.com/submit",
+      "dr": 29,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Productivity Directory",
+      "url": "https://productivity.directory/",
+      "submit_url": "https://productivity.directory/s/submit",
+      "dr": 29,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "AI tools for Marketing",
+      "url": "https://airadar.getinference.com/",
+      "submit_url": null,
+      "dr": 28,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "IABOXTOOL",
+      "url": "https://iaboxtool.es/",
+      "submit_url": "https://iaboxtool.es/enviar-tu-aporte",
+      "dr": 28,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Noteable AI Tools",
+      "url": "https://noteableai.com/",
+      "submit_url": "https://noteableai.com/add-listing",
+      "dr": 28,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "AI Lib",
+      "url": "https://ailib.ru/",
+      "submit_url": "https://ailib.ru/en/add-ai",
+      "dr": 27,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "InstantLaunch",
+      "url": "https://instantlaun.ch/",
+      "submit_url": null,
+      "dr": 27,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Roozna",
+      "url": "https://roozna.com/",
+      "submit_url": "https://roozna.com/en/post-a-new-business",
+      "dr": 27,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "AI Depot",
+      "url": "https://aidepot.co/",
+      "submit_url": "https://aidepot.co/add",
+      "dr": 26,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "OneMillionDirectory",
+      "url": "https://www.onemilliondirectory.com/",
+      "submit_url": null,
+      "dr": 25,
+      "link_type": "Nofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "ThatsMyAI",
+      "url": "https://thatsmy.ai/",
+      "submit_url": null,
+      "dr": 25,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "ThePopularApps",
+      "url": "https://www.thepopularapps.com/",
+      "submit_url": null,
+      "dr": 24,
+      "link_type": "Nofollow",
+      "type": "App Directory"
+    },
+    {
+      "name": "Startup Roulette",
+      "url": "https://startuproulette.com/",
+      "submit_url": null,
+      "dr": 23,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "AINave",
+      "url": "https://www.ainave.com/",
+      "submit_url": "https://www.ainave.com/submit/tools",
+      "dr": 21,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "SaaS Page",
+      "url": "https://www.saaspa.ge/",
+      "submit_url": "https://www.saaspa.ge/submit",
+      "dr": 21,
+      "link_type": "Dofollow",
+      "type": "Launch Platform"
+    },
+    {
+      "name": "AI Tools List",
+      "url": "https://aitoolslist.io/",
+      "submit_url": "https://aitoolslist.io/submit-ai-tool",
+      "dr": 19,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "ki-suche.io",
+      "url": "https://ki-suche.io/",
+      "submit_url": "https://www.advanced-innovation.io/ki-tool-einreichen",
+      "dr": 19,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Pay Once Alternatives",
+      "url": "https://payoncealternatives.com/",
+      "submit_url": "https://payoncealternatives.com/submit",
+      "dr": 19,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "Find Productized",
+      "url": "https://findproductized.co/",
+      "submit_url": null,
+      "dr": 18,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Sites Plus",
+      "url": "https://www.sites-plus.com/",
+      "submit_url": "https://www.sites-plus.com/submit",
+      "dr": 18,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Insanely Cool Tools",
+      "url": "https://insanelycooltools.com/",
+      "submit_url": null,
+      "dr": 17,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "Post Free Directory",
+      "url": "https://postfreedirectory.com/",
+      "submit_url": null,
+      "dr": 17,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "VerySaaS",
+      "url": "https://www.verysaas.io/",
+      "submit_url": null,
+      "dr": 17,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "AI Top Hub",
+      "url": "https://aitophub.com/",
+      "submit_url": null,
+      "dr": 16,
+      "link_type": "Nofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "All Top AI Tools",
+      "url": "https://aitoolfor.org/",
+      "submit_url": null,
+      "dr": 15,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "AItoGrow",
+      "url": "https://aitogrow.com/",
+      "submit_url": "https://aitogrow.com/#send-your-tool",
+      "dr": 14,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "DevTool.io",
+      "url": "https://devtool.io/",
+      "submit_url": null,
+      "dr": 14,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "FuturePedia",
+      "url": "https://www.future-pedia.com/",
+      "submit_url": null,
+      "dr": 14,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "wp.gallery",
+      "url": "https://wp.gallery/",
+      "submit_url": "https://wp.gallery/submit",
+      "dr": 14,
+      "link_type": "Dofollow",
+      "type": "Showcase"
+    },
+    {
+      "name": "FindTools.ai",
+      "url": "https://www.findtools.ai/",
+      "submit_url": null,
+      "dr": 13,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Waild World",
+      "url": "https://waildworld.com/",
+      "submit_url": "https://waildworld.com/",
+      "dr": 13,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "Internet Is Beautiful",
+      "url": "https://internetisbeautiful.com/",
+      "submit_url": "https://tally.so/r/nGrXLj",
+      "dr": 12,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "SuperAIList",
+      "url": "https://www.superailist.com/",
+      "submit_url": null,
+      "dr": 12,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "GrowthBoosters",
+      "url": "https://www.growthboosters.com/",
+      "submit_url": "https://www.growthboosters.com/product/add",
+      "dr": 11,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "The Startup Project",
+      "url": "https://www.startupproject.org/",
+      "submit_url": null,
+      "dr": 11,
+      "link_type": "Dofollow",
+      "type": "Media"
+    },
+    {
+      "name": "AI Hustle",
+      "url": "https://aihustle.tools/",
+      "submit_url": "https://aihustle.tools/submit",
+      "dr": 10,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Free AI Tools Directory",
+      "url": "https://free-ai-tools-directory.com/",
+      "submit_url": "https://free-ai-tools-directory.com/submit-request",
+      "dr": 10,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Website Hunt",
+      "url": "https://www.websitehunt.co/",
+      "submit_url": "https://www.websitehunt.co/websites/submit/create",
+      "dr": 10,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "SaaS Software Directory",
+      "url": "https://saassoftware.org/",
+      "submit_url": null,
+      "dr": 9,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "GPTForge",
+      "url": "https://gptforge.net/",
+      "submit_url": null,
+      "dr": 8,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "TheSaaSDirectory",
+      "url": "https://thesaasdirectory.com/",
+      "submit_url": null,
+      "dr": 8,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Ai Tools Guide",
+      "url": "https://aitoolsguide.com/contact",
+      "submit_url": null,
+      "dr": 7,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Expify",
+      "url": "https://www.expify.ai/",
+      "submit_url": null,
+      "dr": 7,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Nancheng.fun",
+      "url": "https://nancheng.fun/",
+      "submit_url": null,
+      "dr": 7,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "AIforme.wiki",
+      "url": "https://www.aiforme.wiki/",
+      "submit_url": "https://tally.so/r/w4Bo9o",
+      "dr": 6,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "All Theai Tools",
+      "url": "https://alltheaitools.com/",
+      "submit_url": "https://alltheaitools.com/submit-tool",
+      "dr": 6,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "IndieHustles",
+      "url": "https://www.indiehustles.com/",
+      "submit_url": null,
+      "dr": 6,
+      "link_type": "Dofollow",
+      "type": "Software Directory"
+    },
+    {
+      "name": "Noxilo",
+      "url": "https://noxilo.com/",
+      "submit_url": null,
+      "dr": 6,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "AI Generation",
+      "url": "https://www.theaigeneration.com/",
+      "submit_url": null,
+      "dr": 5,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Every AI",
+      "url": "https://every-ai.com/",
+      "submit_url": "https://every-ai.com/submit-tool",
+      "dr": 5,
+      "link_type": "Dofollow",
+      "type": "Directory"
+    },
+    {
+      "name": "Indie Hackers",
+      "url": "https://www.indiehacker.tools/",
+      "submit_url": null,
+      "dr": 5,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Tools.so",
+      "url": "https://tools.so/",
+      "submit_url": null,
+      "dr": 4.3,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Cold Email kit",
+      "url": "https://coldemailkit.com/",
+      "submit_url": null,
+      "dr": 4,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "IndieProducts",
+      "url": "https://www.indieproducts.io/",
+      "submit_url": null,
+      "dr": 3.6,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "indieAI",
+      "url": "https://www.indieai.co/",
+      "submit_url": null,
+      "dr": 3.4,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "Build voyage",
+      "url": "https://buildvoyage.com/",
+      "submit_url": null,
+      "dr": 3,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "ToolAssistant",
+      "url": "https://www.toolassistant.com/",
+      "submit_url": null,
+      "dr": 2.7,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "AI Blue Book",
+      "url": "https://www.aibluebook.com/",
+      "submit_url": null,
+      "dr": 1.8,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Businesstoolvault",
+      "url": "https://businesstoolvault.com/",
+      "submit_url": null,
+      "dr": 1.7,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Braiain",
+      "url": "https://www.braiain.com/",
+      "submit_url": null,
+      "dr": 1.2,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Toolsummary",
+      "url": "https://toolsummary.com/",
+      "submit_url": null,
+      "dr": 1.1,
+      "link_type": "Nofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Create OR tool list",
+      "url": "https://creatortoolslist.com/",
+      "submit_url": null,
+      "dr": 1,
+      "link_type": "Dofollow",
+      "type": "General Directory"
+    },
+    {
+      "name": "AiToolXplorer",
+      "url": "https://www.aitoolxplorer.com/",
+      "submit_url": null,
+      "dr": 0.7,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "The Next Launch",
+      "url": "https://www.thenextlaunch.net/",
+      "submit_url": null,
+      "dr": 0.3,
+      "link_type": "Dofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Futureforgez",
+      "url": "https://www.futureforgez.com/",
+      "submit_url": null,
+      "dr": 0,
+      "link_type": "Dofollow",
+      "type": "AI Directory"
+    },
+    {
+      "name": "Aura++",
+      "url": "https://auraplusplus.com",
+      "submit_url": null,
+      "dr": 69,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Indiehunt",
+      "url": "https://indiehunt.io",
+      "submit_url": null,
+      "dr": 55,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Earlyhunt",
+      "url": "https://earlyhunt.com",
+      "submit_url": null,
+      "dr": 50,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Makerhunt",
+      "url": "https://makerhunt.io",
+      "submit_url": null,
+      "dr": 31,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    },
+    {
+      "name": "Sidehunt",
+      "url": "https://sidehunt.io",
+      "submit_url": null,
+      "dr": 29,
+      "link_type": "Nofollow",
+      "type": "Startup Directory"
+    }
+  ]
+}
